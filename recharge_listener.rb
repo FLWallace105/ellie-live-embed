@@ -52,7 +52,7 @@ def initialize
     #Dotenv.load
     @key = ENV['SHOPIFY_API_KEY']
     @secret = ENV['SHOPIFY_SHARED_SECRET'] 
-    @app_url = "0a7d8d75.ngrok.io"
+    @app_url = "ellie-live-embed.herokuapp.com"
     @tokens = {}
     super
   end
