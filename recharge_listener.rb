@@ -74,7 +74,7 @@ get '/auth/shopify/callback' do
   shop = request.params['shop']
   code = request.params['code']
   hmac = request.params['hmac']
-
+  # --
   # perform hmac validation to determine if the request is coming from Shopify
   h = request.params.reject{|k,_| k == 'hmac' || k == 'signature'}
   query = URI.escape(h.sort.collect{|k,v| "#{k}=#{v}"}.join('&'))
