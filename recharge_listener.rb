@@ -126,7 +126,7 @@ get '/auth/shopify/callback' do
 end
 
 get '/hello' do
-  "Hello, success"
+  "Hello, success, thanks for installing me!"
 end
 
 post '/funky-next-month-preview' do
