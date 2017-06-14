@@ -321,7 +321,7 @@ module FixMonth
               "line_items": [
               {
               "id": prod_id,
-              "sku": "722457737550",
+              
               "quantity": 1,
               "price": 0.00,
               "title": myprod,
