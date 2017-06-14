@@ -224,7 +224,7 @@ module FixMonth
 
   end
 
-  def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
+  def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, mysku, influencer_tag, shop_wait)
     puts "Adding Order for Influencer -- "
     puts "prod_id=#{prod_id}"
     my_order = {
@@ -237,6 +237,7 @@ module FixMonth
               "quantity": 1,
               "price": 0.00,
               "title": "Monthly Box",
+              "sku": mysku, 
               "properties": [
                     {
                         "name": "accessories",
@@ -310,7 +311,7 @@ module FixMonth
 
   end
 
-  def add_shopify_bottle_order(myemail, myprod, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
+  def add_shopify_bottle_order(myemail, myprod, mysku, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
     puts "Adding Order for Influencer -- "
     puts "prod_id=#{prod_id}"
     my_order = {
@@ -320,6 +321,7 @@ module FixMonth
               "line_items": [
               {
               "product_id": prod_id,
+              "sku": mysku,
               "quantity": 1,
               "price": 0.00,
               "title": myprod,

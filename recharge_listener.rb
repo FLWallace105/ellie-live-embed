@@ -137,6 +137,7 @@ post '/funky-next-month-preview' do
 
 end
 
+
 post '/influencer-bottle' do
   content_type :application_javascript
   status 200
@@ -450,7 +451,7 @@ class InfluencerBottle
         puts "Create new order? #{create_new_order}"
         if create_new_order
           #puts "adding bottle order --"
-          add_shopify_bottle_order(email, INFLUENCER_BOTTLE, firstname, lastname, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_BOTTLE_ID, INFLUENCER_ORDER, SHOP_WAIT)
+          add_shopify_bottle_order(email, INFLUENCER_BOTTLE, BOTTLE_SKU, firstname, lastname, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_BOTTLE_ID, INFLUENCER_ORDER, SHOP_WAIT)
         else
           puts "Duplicate orders exist for this month and year, cannot add order for this influencer"
         end
@@ -469,7 +470,7 @@ class InfluencerBottle
 
 
         #add order here
-        add_shopify_bottle_order(email, INFLUENCER_BOTTLE, firstname, lastname, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_BOTTLE_ID, INFLUENCER_ORDER, SHOP_WAIT)
+        add_shopify_bottle_order(email, INFLUENCER_BOTTLE, BOTTLE_SKU, firstname, lastname, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_BOTTLE_ID, INFLUENCER_ORDER, SHOP_WAIT)
         puts "Done adding order for non-registered with shopify customer."
 
 
@@ -574,7 +575,7 @@ class InfluencerBox
         puts "Create new order? #{create_new_order}"
 
         if create_new_order
-          add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, INFLUENCER_ORDER, SHOP_WAIT)
+          add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, BOX_SKU, INFLUENCER_ORDER, SHOP_WAIT)
         else
           puts "Duplicate orders exist for this month and year, cannot add order for this influencer"
         end
@@ -596,7 +597,7 @@ class InfluencerBox
 
 
         #add order here
-        add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, INFLUENCER_ORDER, SHOP_WAIT)
+        add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, BOX_SKU, INFLUENCER_ORDER, SHOP_WAIT)
         puts "Done adding order for non-registered with shopify customer."
       end
 
