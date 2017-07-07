@@ -870,16 +870,30 @@ class ChangeCustSizes
       current_month = Date.today.strftime("%B")
       alt_title = "#{current_month} VIP Box"
 
-      my_subscription_id = ''
+      #my_subscriptions = Array.new
 
-      my_subscriber_data = request_subscriber_id(my_shopify_id, $my_get_header, alt_title)
-
-      my_subscription_id = my_subscriber_data['my_subscription_id']
-      puts "My Subscriber ID = #{my_subscription_id}"
+      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header)
+      puts "We have the following subscription ids:"
+      my_subscriptions.each do |subid|
+        puts subid
+        end
+      
       my_data_recharge = {"properties" => [{"name" => "leggings", "value" => bottom_sizes }, {"name" => "sports-bra", "value" =>bra_sizes }, {"name" => "tops", "value" => top_sizes }]}.to_json
       puts my_data_recharge
-      send_size_change_recharge = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_subscription_id}", :headers => $my_change_charge_header, :body => my_data_recharge)
-      puts send_size_change_recharge
+      #send_size_change_recharge = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_subscription_id}", :headers => $my_change_charge_header, :body => my_data_recharge)
+      #puts send_size_change_recharge
+
+      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header)
+      puts "We have the following subscription ids:"
+      my_subscriptions.each do |subid|
+        puts "Changing sizes for subscription #{subid}"
+        send_size_change_recharge = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{subid}", :headers => $my_change_charge_header, :body => my_data_recharge)
+        check_recharge_limits(send_size_change_recharge)
+        puts send_size_change_recharge.inspect
+
+        end
+
+
 
     else
       puts "Action is #{my_action}"
@@ -972,6 +986,7 @@ class UpsellProcess
     puts upsellprocess_data.inspect
     my_action = upsellprocess_data['endpoint_info']
     variant_id = upsellprocess_data['shopify_variant_id']
+    preview = false
     #check for correct action and end if incorrect
     if my_action == "cust_upsell" && variant_id != '' && !variant_id.nil?
       #go ahead and do stuff
@@ -1021,40 +1036,20 @@ class UpsellProcess
       tomorrow = Date.today + 1
 
       my_charge_date = tomorrow.strftime("%Y-%m-%d")
+      puts "Tommorow is #{my_charge_date}"
+
+      check_for_duplicate_subscription(cust_id, address_id, shopify_id, my_true_variant_id, my_product_id, my_product_title, true_price, $my_get_header, $my_change_charge_header, line_item_properties)
 
 
       #data_send_to_recharge = {"address_id" => address_id, "next_charge_scheduled_at" => next_charge_scheduled, "product_title" => product_title, "price" => price_float, "quantity" => quantity, "shopify_variant_id" => variant_id, "order_interval_unit" => "month", "order_interval_frequency" => "1", "charge_interval_frequency" => "1"}.to_json
       #puts data_send_to_recharge
 
 
-      puts "----"
-      preview = false
-      submit_order_hash = check_for_duplicate_subscription(shopify_id, my_true_variant_id, my_product_title, $my_get_header, preview)
-      submit_order_flag = submit_order_hash['process_order']
-      process_order_date = submit_order_hash['charge_date']
-      puts "submit_order_flag = #{submit_order_flag}"
-
-
-
-      if submit_order_flag == false
-          puts "This is a duplicate order, I can't send to Recharge as there already exists an ACTIVE subscription with this variant_id #{variant_id} or title #{product_title}."
-      else
-          puts "OK, submitting order"
-          data_send_to_recharge = {"address_id" => address_id, "next_charge_scheduled_at" => process_order_date, "product_title" => my_product_title, "shopify_product_id" => my_product_id,  "price" => true_price, "quantity" => "#{quantity}", "shopify_variant_id" => my_true_variant_id, "order_interval_unit" => "month", "order_interval_frequency" => "1", "charge_interval_frequency" => "1", "number_charges_until_expiration" => "1", "properties" => line_item_properties }.to_json
-          puts data_send_to_recharge
-          puts "sleeping #{RECH_WAIT}"
-          sleep RECH_WAIT.to_i
-          puts "Submitting order as a new upsell subscription"
-          send_upsell_to_recharge = HTTParty.post("https://api.rechargeapps.com/subscriptions", :headers => $my_change_charge_header, :body => data_send_to_recharge)
-          puts send_upsell_to_recharge.inspect
-        end
-
-
     else
       #don't do anything, incorrect parameters
       puts "We can't do anything: endpoint_info = #{my_action}"
     end
-
+    puts "Done with adding upsell for this customer!"
   end
 end
 
