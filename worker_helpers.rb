@@ -270,7 +270,6 @@ end
     my_order = {
              "order": {
               "email": myemail, 
-              "fulfillment_status": "fulfilled",
               "send_receipt": true,
               "send_fulfillment_receipt": true,
               "tags": influencer_tag,
