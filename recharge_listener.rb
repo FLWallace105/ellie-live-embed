@@ -561,7 +561,7 @@ class InfluencerBox
           #ticket.code_used = "t"
           #ticket.save
           #ticket.update_attributes(code_used: true)
-          #Tickets.update(my_id, true)
+          #Tickets.update(my_id, true) 
           #ticket.attribute = true
           #ticket.save(:validate => false)
           Tickets.where(id: my_id).update_all(code_used: true)
@@ -619,7 +619,7 @@ class InfluencerBox
         puts "Create new order? #{create_new_order}"
 
         if create_new_order
-          add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, BOX_SKU, INFLUENCER_ORDER, SHOP_WAIT)
+          add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, BOX_SKU, INFLUENCER_ORDER, SHOP_WAIT, INFLUENCER_PRODUCT)
         else
           puts "Duplicate orders exist for this month and year, cannot add order for this influencer"
         end
@@ -641,7 +641,7 @@ class InfluencerBox
 
 
         #add order here
-        add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, BOX_SKU, INFLUENCER_ORDER, SHOP_WAIT)
+        add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, $apikey, $password, $shopname, PROD_ID, BOX_SKU, INFLUENCER_ORDER, SHOP_WAIT, INFLUENCER_PRODUCT)
         puts "Done adding order for non-registered with shopify customer."
       end
     else  

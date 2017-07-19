@@ -264,7 +264,7 @@ end
 
   end
 
-  def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, mysku, influencer_tag, shop_wait)
+  def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, mysku, influencer_tag, shop_wait, product_title)
     puts "Adding Order for Influencer -- "
     puts "prod_id=#{prod_id}"
     my_order = {
@@ -278,17 +278,10 @@ end
               "product_id": prod_id,
               "quantity": 1,
               "price": 0.00,
-              "title": "Monthly Box",
+              "title": product_title,
               "sku": mysku, 
               "properties": [
-                    {
-                        "name": "accessories",
-                        "value": myaccessories1
-                    },
-                    {
-                        "name": "equipment",
-                        "value": myaccessories2
-                    },
+                    
                     {
                         "name": "leggings",
                         "value": myleggings
