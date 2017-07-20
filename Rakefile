@@ -6,7 +6,7 @@ require 'sinatra/activerecord/rake'
 
 require_relative "tag_customers"
 
-StandaloneMigrations::Tasks.load_tasks
+#StandaloneMigrations::Tasks.load_tasks
 
 desc "get customer subscriptions"
 task :show_customers do |t|
