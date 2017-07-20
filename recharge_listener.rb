@@ -56,7 +56,8 @@ configure do
   INFLUENCER_BOTTLE_ID = ENV['INFLUENCER_BOTTLE_ID']
   BOTTLE_SKU = ENV['BOTTLE_SKU']
   BOX_SKU = ENV['BOX_SKU']
-
+  SHOPIFY_THREE_MONTHS = ENV['SHOPIFY_THREE_MONTHS']
+  CUST_TAG_THREE_MONTHS = ENV['CUST_TAG_THREE_MONTHS']
 
 
 end
@@ -139,6 +140,30 @@ post '/funky-next-month-preview' do
   status 200
   puts "Doing Funky Skip Next Month Preview"
   puts params.inspect
+
+end
+
+
+post '/subscription_created' do
+  content_type :application_javascript
+  status 200
+  puts "Received new subscriptions"
+  puts params.inspect
+  mystuff = JSON.parse(request.body.read)
+  puts mystuff.inspect
+  Resque.enqueue(SubscriptionListener, mystuff)
+end
+
+
+post '/subscription_deleted' do
+  content_type :application_javascript
+  status 200
+  puts "Received a deleted subscription"
+  puts params.inspect
+  mystuff = JSON.parse(request.body.read)
+  puts mystuff.inspect
+  Resque.enqueue(SubscriptionDeleted, mystuff)
+
 
 end
 
@@ -410,6 +435,131 @@ helpers do
   end
 
 end
+
+class SubscriptionDeleted
+  extend FixMonth
+  @queue = "subs_deleted"
+  def self.perform(params)
+    puts "Received a deleted subscription:"
+    puts params.inspect
+    subscription_info = params['subscription']
+    puts subscription_info.inspect
+    customer_id = subscription_info['customer_id']
+    shopify_product_id = subscription_info['shopify_product_id']
+    status = subscription_info['status']
+    puts "customer_id = #{customer_id}, shopify_prod_id = #{shopify_product_id}"
+    puts "Shopify Three months product id = #{SHOPIFY_THREE_MONTHS}"
+    if shopify_product_id.to_i == SHOPIFY_THREE_MONTHS.to_i 
+      puts "We have a three month subscription cancelled, we must un-tag this customer"
+      puts "First we need to get the shopify_customer_id from Recharge"
+      my_customer = HTTParty.get("https://api.rechargeapps.com/customers/#{customer_id}", :headers => $my_get_header)
+      check_recharge_limits(my_customer)
+      customer_info = my_customer.parsed_response
+      puts customer_info.inspect
+      customer_shopify_id  = customer_info['customer']['shopify_customer_id']
+      puts "customer shopify id = #{customer_shopify_id}"
+      ShopifyAPI::Base.site = "https://#{$apikey}:#{$password}@#{$shopname}.myshopify.com/admin"
+      my_customer = ShopifyAPI::Customer.find(customer_shopify_id)
+      customer_tags = my_customer.tags
+      my_first_name = my_customer.first_name
+      my_last_name = my_customer.last_name
+      if !customer_tags.nil?
+        tag_array = customer_tags.split(", ")
+        minus_array = Array.new
+        minus_array.push(CUST_TAG_THREE_MONTHS)
+        tag_array = tag_array - minus_array
+        if tag_array.length == 1
+          new_tags = tag_array[0]
+        else
+          new_tags = tag_array.join(", ")
+        end
+        puts "Now attempting to push tags to Shopify"
+        my_customer.tags = new_tags
+        my_customer.save
+        puts "sleeping 3 secs"
+        sleep 3
+        puts "We have set customer #{my_first_name} #{my_last_name} tags = #{new_tags}"
+
+      else
+        puts "We have no tags to remove so not doing anything"
+
+      end
+
+    else
+      puts "Sorry we untag only 3month customers"
+
+    end 
+  end
+end
+
+
+class SubscriptionListener
+  extend FixMonth
+  @queue = "subs_listener"
+  def self.perform(params)
+    puts "Received webhook subscription info:"
+    puts params.inspect
+    subscription_info = params['subscription']
+    puts subscription_info.inspect
+    customer_id = subscription_info['customer_id']
+    shopify_product_id = subscription_info['shopify_product_id']
+    status = subscription_info['status']
+    puts "customer_id = #{customer_id}, shopify_prod_id = #{shopify_product_id}"
+    puts "Shopify Three months product id = #{SHOPIFY_THREE_MONTHS}"
+    if shopify_product_id.to_i == SHOPIFY_THREE_MONTHS.to_i 
+      puts "We have a three month subscription that is, we must tag this customer"
+      puts "First we need to get the shopify_customer_id from Recharge"
+      #GET /customers/<id>
+      my_customer = HTTParty.get("https://api.rechargeapps.com/customers/#{customer_id}", :headers => $my_get_header)
+      check_recharge_limits(my_customer)
+      customer_info = my_customer.parsed_response
+      puts customer_info.inspect
+      customer_shopify_id  = customer_info['customer']['shopify_customer_id']
+      
+      my_customer_tag = {
+             "customer":  {
+             "id": customer_shopify_id,
+              
+              "tags": CUST_TAG_THREE_MONTHS,
+              "note": "Webhook tagging done through API"
+              }
+            }
+      puts "customer shopify id = #{customer_shopify_id}"
+      ShopifyAPI::Base.site = "https://#{$apikey}:#{$password}@#{$shopname}.myshopify.com/admin"
+      my_customer = ShopifyAPI::Customer.find(customer_shopify_id)
+      customer_tags = my_customer.tags
+      my_first_name = my_customer.first_name
+      my_last_name = my_customer.last_name
+      #puts my_customer.inspect
+      #puts customer_tags.inspect
+      tag_array = Array.new
+      new_tags = ""
+      if !customer_tags.nil?
+          tag_array = customer_tags.split(", ")
+          tag_array.push(CUST_TAG_THREE_MONTHS)
+          tag_array.uniq!
+        else
+          
+          tag_array.push(CUST_TAG_THREE_MONTHS)
+        end
+        if tag_array.length == 1
+          new_tags = tag_array[0]
+          else
+          new_tags = tag_array.join(", ")
+          end
+      my_customer.tags = new_tags
+      puts "Sleeping 3 secs."
+      sleep 3
+      my_customer.save
+      puts "We tagged the customer #{my_first_name} #{my_last_name} with: #{new_tags}"
+    else
+      puts "We don't have a three month subscription that is, no tagging"
+    end
+
+  end
+end
+
+
 
 
 class InfluencerBottle
