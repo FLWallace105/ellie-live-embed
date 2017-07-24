@@ -58,7 +58,7 @@ configure do
   BOX_SKU = ENV['BOX_SKU']
   SHOPIFY_THREE_MONTHS = ENV['SHOPIFY_THREE_MONTHS']
   CUST_TAG_THREE_MONTHS = ENV['CUST_TAG_THREE_MONTHS']
-
+  SHOPIFY_MONTHLY_BOX_ID =ENV['SHOPIFY_MONTHLY_BOX_ID']
 
 end
 
@@ -765,7 +765,10 @@ class InfluencerBox
 
         #GET /admin/customers/#{id}/orders.json
         puts "influencer product = #{INFLUENCER_PRODUCT}"
-        create_new_order = check_duplicate_orders(shopify_id, $apikey, $password, $shopname, INFLUENCER_PRODUCT, SHOP_WAIT)
+        #commented out as we no longer need to check for dupes influencer code controls that
+        #create_new_order = check_duplicate_orders(shopify_id, $apikey, $password, $shopname, INFLUENCER_PRODUCT, SHOP_WAIT)
+        
+        create_new_order = true
         puts "Create new order? #{create_new_order}"
 
         if create_new_order
@@ -1443,25 +1446,44 @@ class SkipMonth
     shopify_id = skip_month_data['shopify_id']
 
     if action == 'skip_month'
-      current_month = Date.today.strftime("%B")
-      plain_title = "#{current_month} Box"
-      alt_title = "#{current_month} VIP Box"
-      three_month_box = "VIP 3 Monthly Box"
-      old_three_month_box = "VIP 3 Month Box"
-      orig_sub_date = ""
-      my_subscription_id = ''
+      current_month = Date.today
+      previous_month = current_month << 1
+      last_day_prior = previous_month.end_of_month
+
       puts "Got Here to request data from Recharge."
 
-      get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}", :headers => $my_get_header)
+      get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}&limit=250", :headers => $my_get_header)
       mysubs = get_sub_info.parsed_response
       puts "Must sleep for #{RECH_WAIT} seconds"
       sleep RECH_WAIT.to_i
       subsonly = mysubs['subscriptions']
+      #puts subsonly.inspect
+      puts "OK, now looping through all subscriptions for this customer:"
+      puts "product_id         status      product_title    created_at"
+      puts "==========================================================="
       subsonly.each do |subs|
+        #puts subs.inspect
+        product_id = subs['shopify_product_id']
+        status = subs['status']
+        product_title = subs['product_title']
+        created_at = subs['created_at']
+        continue_skipping = false
+        created_at_date = DateTime.strptime(created_at, "%Y-%m-%dT%H:%M:%S")
+        puts "#{product_id}, #{status}, #{product_title}, #{created_at}"
+        if created_at_date > last_day_prior
+            puts "Sorry, the created_at_date is #{created_at} which is this month and we cannot"
+            puts "Skip the month when a subscription is in its first month as it creates a new subscription which is bad"
+            continue_skipping = false
+          else
+            puts "OK we can skip this subscription if other conditions check out, it was"
+            puts "created_at #{created_at} which was prior to this month"
+            continue_skipping = true
+          end
 
-        if subs['status'] != "CANCELLED"
-            product_title = subs['product_title']
-            if product_title == "VIP 3 Monthly Box" || product_title == "Monthly Box" || product_title ==   alt_title || product_title = plain_title || product_title == old_three_month_box
+        if subs['status'] != "CANCELLED" && subs['status'] != "ONETIME"
+            #product_title = subs['product_title']
+            #puts product_id.to_i, SHOPIFY_MONTHLY_BOX_ID.to_i, continue_skipping
+            if product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i && continue_skipping
               puts subs.inspect
               my_subscription_id = subs['id']
               orig_sub_date = subs['next_charge_scheduled_at']
@@ -1469,15 +1491,17 @@ class SkipMonth
               #Now check to see if the subscriber can skip to next month, i.e. their current
               #next_subscription date is this month. If not, do nothing.
               my_sub_date = DateTime.parse(orig_sub_date)
+              current_month_str = current_month.strftime("%B")
               subscriber_actual_next_charge_month = my_sub_date.strftime("%B")
               puts "Subscriber next charge month = #{subscriber_actual_next_charge_month}"
-              puts "Current month is #{current_month}"
-              if current_month == subscriber_actual_next_charge_month
+              puts "Current month is #{current_month_str}"
+              if current_month_str == subscriber_actual_next_charge_month
                  puts "Skipping charge to next month"
+                 puts "So Happy We can Skip for this customer!"
                  skip_to_next_month(my_subscription_id, my_sub_date, $my_change_charge_header)
 
               else
-                 puts "We can't do anything, the next_charge_month is #{subscriber_actual_next_charge_month} which is not the current month -- #{current_month}"
+                 puts "We can't do anything, the next_charge_month is #{subscriber_actual_next_charge_month} which is not the current month -- #{current_month_str}"
               end
 
 
