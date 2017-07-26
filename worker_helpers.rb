@@ -147,6 +147,61 @@ module FixMonth
   end
 
   
+  def submit_upsell_request(cust_id, address_id, shopify_id, shopify_variant_id, my_product_id, product_title, true_price, my_get_header, my_change_charge_header, line_item_properties)
+    puts "First checking to see if we have a subscription created this month"
+    puts "If created this month, we cannot add on as it creates a new MAIN subscription"
+    puts "Subsequent months are OK though."
+    # Ck for: active subscription, created_at is not this month
+    #Get first day of current month
+    my_today = Date.today.beginning_of_month
+
+    add_onetime_subscription = false
+    active_subscriptions = false
+    all_subscriptions_customer = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}", :headers => my_get_header)
+    check_recharge_limits(all_subscriptions_customer)
+    all_subscriptions_customer.parsed_response['subscriptions'].each do |subs|
+      #puts subs.inspect
+      status = subs['status']
+      created_at = subs['created_at']
+      my_created_at = DateTime.strptime(created_at, '%Y-%m-%dT%H:%M:%S')
+      if status != "CANCELLED" && status != "ONETIME"
+        active_subscriptions = true
+        puts "--------------"
+        puts subs.inspect
+        puts "-------------"
+        #puts "created_at date is #{created_at} and first day current month is #{my_today.inspect}"
+        if my_today > my_created_at
+          puts "created_at date is #{created_at} and first day current month is #{my_today.inspect}"
+          puts "We can now add a subscription because it was not created this month"
+          add_onetime_subscription = true
+          end
+        end
+
+      end
+
+    if add_onetime_subscription
+      #add the one time subscription
+      puts "Adding upsell"
+      my_charge_date = Date.today
+      local_charge_date = my_charge_date.strftime('%Y-%m-%dT%H:%M:%S')
+      quantity = 1
+      data_send_to_recharge = {"address_id" => address_id, "next_charge_scheduled_at" => local_charge_date, "product_title" => product_title, "shopify_product_id" => my_product_id,  "price" => true_price, "quantity" => "#{quantity}", "shopify_variant_id" => shopify_variant_id, "order_interval_unit" => "month", "order_interval_frequency" => "1", "charge_interval_frequency" => "1", "number_charges_until_expiration" => "1", "properties" => line_item_properties }.to_json
+          
+      puts data_send_to_recharge
+      puts "Submitting order as a new upsell subscription"
+      send_upsell_to_recharge = HTTParty.post("https://api.rechargeapps.com/subscriptions", :headers => my_change_charge_header, :body => data_send_to_recharge)
+      puts send_upsell_to_recharge.inspect
+
+    else
+      puts "We could NOT ADD A SUBSCRIPTION because either no active subscriptions or subscription was created this month."
+      puts "Active Subscriptions = #{active_subscriptions}, any subscription not created this month = #{add_onetime_subscription}"
+    end
+
+
+  end
+
+
+
 
   def check_for_duplicate_subscription(cust_id, address_id, shopify_id, shopify_variant_id, my_product_id, product_title, true_price, my_get_header, my_change_charge_header, line_item_properties)
     puts "Checking for duplicate orders ..."

@@ -1235,8 +1235,9 @@ class UpsellProcess
       my_charge_date = tomorrow.strftime("%Y-%m-%d")
       puts "Tommorow is #{my_charge_date}"
 
-      check_for_duplicate_subscription(cust_id, address_id, shopify_id, my_true_variant_id, my_product_id, my_product_title, true_price, $my_get_header, $my_change_charge_header, line_item_properties)
+      #check_for_duplicate_subscription(cust_id, address_id, shopify_id, my_true_variant_id, my_product_id, my_product_title, true_price, $my_get_header, $my_change_charge_header, line_item_properties)
 
+      submit_upsell_request(cust_id, address_id, shopify_id, my_true_variant_id, my_product_id, my_product_title, true_price, $my_get_header, $my_change_charge_header, line_item_properties)
 
       #data_send_to_recharge = {"address_id" => address_id, "next_charge_scheduled_at" => next_charge_scheduled, "product_title" => product_title, "price" => price_float, "quantity" => quantity, "shopify_variant_id" => variant_id, "order_interval_unit" => "month", "order_interval_frequency" => "1", "charge_interval_frequency" => "1"}.to_json
       #puts data_send_to_recharge
