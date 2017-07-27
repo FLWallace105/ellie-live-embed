@@ -43,7 +43,7 @@ module FixMonth
 
   end
 
-  def request_subscriber_id(shopify_id, headers)
+  def request_subscriber_id(shopify_id, headers, ellie_3pack_id, monthly_box_id)
     my_subscription_id = ''
     subscription_id_array = Array.new
     orig_sub_date = ''
@@ -56,7 +56,10 @@ module FixMonth
       puts "-------------"
         puts subs.inspect
       puts "-------------"
-        if (subs['product_title']  =~ /\d\sMonth/i || subs['product_title'] =~ /box/i) 
+        shopify_product_id = subs['shopify_product_id']
+        product_title = subs['product_title']
+        #ck for shopify_product_id equal to monthly box or ellie_3pack ids, or check for product_title having "box in it"
+        if (shopify_product_id.to_i  == ellie_3pack_id.to_i || shopify_product_id.to_i  == monthly_box_id.to_i || product_title =~ /\sbox/i) 
           #puts "Subscription scheduled at: #{subs['next_charge_scheduled_at']}"
           #=~ /\A3\sMonths/i || subs['product_title'] =~ /box/i
           puts "*****************************"

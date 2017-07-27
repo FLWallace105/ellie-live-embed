@@ -1065,23 +1065,17 @@ class ChangeCustSizes
       #puts "sleeping 3 again"
       #sleep 3
 
-      current_month = Date.today.strftime("%B")
-      alt_title = "#{current_month} VIP Box"
-
+      
       #my_subscriptions = Array.new
 
-      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header)
-      puts "We have the following subscription ids:"
-      my_subscriptions.each do |subid|
-        puts subid
-        end
+      
       
       my_data_recharge = {"properties" => [{"name" => "leggings", "value" => bottom_sizes }, {"name" => "sports-bra", "value" =>bra_sizes }, {"name" => "tops", "value" => top_sizes }]}.to_json
       puts my_data_recharge
       #send_size_change_recharge = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_subscription_id}", :headers => $my_change_charge_header, :body => my_data_recharge)
       #puts send_size_change_recharge
 
-      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header)
+      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header, SHOPIFY_ELLIE_3PACK_ID, SHOPIFY_MONTHLY_BOX_ID)
       puts "We have the following subscription ids:"
       my_subscriptions.each do |subid|
         puts "Changing sizes for subscription #{subid}"
@@ -1090,8 +1084,8 @@ class ChangeCustSizes
         puts send_size_change_recharge.inspect
 
         end
-
-
+      puts "--------------------------------------------------"
+      puts "All done changing size for customer's subscriptions!"
 
     else
       puts "Action is #{my_action}"
