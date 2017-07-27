@@ -58,7 +58,8 @@ configure do
   BOX_SKU = ENV['BOX_SKU']
   SHOPIFY_THREE_MONTHS = ENV['SHOPIFY_THREE_MONTHS']
   CUST_TAG_THREE_MONTHS = ENV['CUST_TAG_THREE_MONTHS']
-  SHOPIFY_MONTHLY_BOX_ID =ENV['SHOPIFY_MONTHLY_BOX_ID']
+  SHOPIFY_MONTHLY_BOX_ID = ENV['SHOPIFY_MONTHLY_BOX_ID']
+  SHOPIFY_ELLIE_3PACK_ID = ENV['SHOPIFY_ELLIE_3PACK_ID']
 
 end
 
@@ -1483,8 +1484,8 @@ class SkipMonth
 
         if subs['status'] != "CANCELLED" && subs['status'] != "ONETIME"
             #product_title = subs['product_title']
-            #puts product_id.to_i, SHOPIFY_MONTHLY_BOX_ID.to_i, continue_skipping
-            if product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i && continue_skipping
+            puts product_id.to_i, SHOPIFY_MONTHLY_BOX_ID.to_i, SHOPIFY_ELLIE_3PACK_ID.to_i, continue_skipping
+            if (product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i  || product_id.to_i == SHOPIFY_ELLIE_3PACK_ID.to_i ) && continue_skipping
               puts subs.inspect
               my_subscription_id = subs['id']
               orig_sub_date = subs['next_charge_scheduled_at']
