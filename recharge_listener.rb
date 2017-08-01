@@ -60,6 +60,7 @@ configure do
   CUST_TAG_THREE_MONTHS = ENV['CUST_TAG_THREE_MONTHS']
   SHOPIFY_MONTHLY_BOX_ID = ENV['SHOPIFY_MONTHLY_BOX_ID']
   SHOPIFY_ELLIE_3PACK_ID = ENV['SHOPIFY_ELLIE_3PACK_ID']
+  SHOPIFY_3MONTH_ID = ENV['SHOPIFY_3MONTH_ID']
 
 end
 
@@ -1075,7 +1076,7 @@ class ChangeCustSizes
       #send_size_change_recharge = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_subscription_id}", :headers => $my_change_charge_header, :body => my_data_recharge)
       #puts send_size_change_recharge
 
-      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header, SHOPIFY_ELLIE_3PACK_ID, SHOPIFY_MONTHLY_BOX_ID)
+      my_subscriptions = request_subscriber_id(my_shopify_id, $my_get_header, SHOPIFY_ELLIE_3PACK_ID, SHOPIFY_MONTHLY_BOX_ID, SHOPIFY_3MONTH_ID)
       puts "We have the following subscription ids:"
       my_subscriptions.each do |subid|
         puts "Changing sizes for subscription #{subid}"
