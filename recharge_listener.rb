@@ -1484,7 +1484,7 @@ class SkipMonth
         if subs['status'] != "CANCELLED" && subs['status'] != "ONETIME"
             #product_title = subs['product_title']
             puts product_id.to_i, SHOPIFY_MONTHLY_BOX_ID.to_i, SHOPIFY_ELLIE_3PACK_ID.to_i, continue_skipping
-            if (product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i  || product_id.to_i == SHOPIFY_ELLIE_3PACK_ID.to_i || product_id.to_i == SHOPIFY_MONTHLY_BOX_AUTORENEW_ID) && continue_skipping
+            if (product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i  || product_id.to_i == SHOPIFY_ELLIE_3PACK_ID.to_i || product_id.to_i == SHOPIFY_MONTHLY_BOX_AUTORENEW_ID.to_i) && continue_skipping
               puts subs.inspect
               my_subscription_id = subs['id']
               orig_sub_date = subs['next_charge_scheduled_at']
