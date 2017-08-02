@@ -61,6 +61,7 @@ configure do
   SHOPIFY_MONTHLY_BOX_ID = ENV['SHOPIFY_MONTHLY_BOX_ID']
   SHOPIFY_ELLIE_3PACK_ID = ENV['SHOPIFY_ELLIE_3PACK_ID']
   SHOPIFY_3MONTH_ID = ENV['SHOPIFY_3MONTH_ID']
+  SHOPIFY_MONTHLY_BOX_AUTORENEW_ID = ENV['SHOPIFY_MONTHLY_BOX_AUTORENEW_ID']
 
 end
 
@@ -1451,10 +1452,13 @@ class SkipMonth
 
       get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}&limit=250", :headers => $my_get_header)
       mysubs = get_sub_info.parsed_response
+      puts mysubs.inspect
+      puts "----------------"
+      puts get_sub_info.inspect
       puts "Must sleep for #{RECH_WAIT} seconds"
       sleep RECH_WAIT.to_i
       subsonly = mysubs['subscriptions']
-      #puts subsonly.inspect
+      puts subsonly.inspect
       puts "OK, now looping through all subscriptions for this customer:"
       puts "product_id         status      product_title    created_at"
       puts "==========================================================="
@@ -1480,7 +1484,7 @@ class SkipMonth
         if subs['status'] != "CANCELLED" && subs['status'] != "ONETIME"
             #product_title = subs['product_title']
             puts product_id.to_i, SHOPIFY_MONTHLY_BOX_ID.to_i, SHOPIFY_ELLIE_3PACK_ID.to_i, continue_skipping
-            if (product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i  || product_id.to_i == SHOPIFY_ELLIE_3PACK_ID.to_i ) && continue_skipping
+            if (product_id.to_i == SHOPIFY_MONTHLY_BOX_ID.to_i  || product_id.to_i == SHOPIFY_ELLIE_3PACK_ID.to_i || product_id.to_i == SHOPIFY_MONTHLY_BOX_AUTORENEW_ID) && continue_skipping
               puts subs.inspect
               my_subscription_id = subs['id']
               orig_sub_date = subs['next_charge_scheduled_at']
