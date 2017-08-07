@@ -59,7 +59,7 @@ module FixMonth
         shopify_product_id = subs['shopify_product_id']
         product_title = subs['product_title']
         #ck for shopify_product_id equal to monthly box or ellie_3pack ids, or check for product_title having "box in it"
-        if (shopify_product_id.to_i  == ellie_3pack_id.to_i || shopify_product_id.to_i  == monthly_box_id.to_i || product_title =~ /\sbox/i || shopify_product_id.to_i == three_month_id) 
+        if (shopify_product_id.to_i  == ellie_3pack_id.to_i || shopify_product_id.to_i  == monthly_box_id.to_i || product_title =~ /\sbox/i || shopify_product_id.to_i == three_month_id.to_i) 
           #puts "Subscription scheduled at: #{subs['next_charge_scheduled_at']}"
           #=~ /\A3\sMonths/i || subs['product_title'] =~ /box/i
           puts "*****************************"
