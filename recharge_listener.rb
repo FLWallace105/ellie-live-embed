@@ -476,6 +476,10 @@ class SubscriptionDeleted
         else
           new_tags = tag_array.join(", ")
         end
+        #New Code Floyd Wallace 9/5/2017 to take care of variants of 3MonTh(s) in tags
+        new_tags = new_tags.gsub(/3months?\, /i, "")
+        new_tags = new_tags.gsub(/3months?/i, "")
+
         puts "Now attempting to push tags to Shopify"
         my_customer.tags = new_tags
         my_customer.save
