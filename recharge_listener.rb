@@ -1062,7 +1062,19 @@ class ChangeCustSizes
       bra_sizes = cust_sizes_hash['bra_size']
       bra_sizes = bra_sizes.gsub(/\s+/, " ").strip
 
-      puts "Cust Sizes now bottom=#{bottom_sizes}, top=#{top_sizes}, bra=#{bra_sizes}"
+      #check to see if you have jacket_size key in hash
+      if cust_sizes_hash.key?("jacket_size")
+        jacket_sizes = cust_sizes_hash['jacket_size']
+        jacket_sizes = jacket_sizes.gsub(/\s+/, " ").strip
+        #puts jacket_sizes.inpsect
+
+        puts "Cust Sizes now bottom=#{bottom_sizes}, top=#{top_sizes}, bra=#{bra_sizes}, jacket=#{jacket_sizes}"
+        my_data_recharge = {"properties" => [{"name" => "leggings", "value" => bottom_sizes }, {"name" => "sports-bra", "value" =>bra_sizes }, {"name" => "tops", "value" => top_sizes }, {"name" => "sports-jacket", "value" => jacket_sizes }]}.to_json
+      else
+        puts "Cust Sizes now bottom=#{bottom_sizes}, top=#{top_sizes}, bra=#{bra_sizes}"
+        my_data_recharge = {"properties" => [{"name" => "leggings", "value" => bottom_sizes }, {"name" => "sports-bra", "value" =>bra_sizes }, {"name" => "tops", "value" => top_sizes }]}.to_json
+      end
+      
       #cust_id = request_recharge_id(my_shopify_id, $my_get_header)
       #puts "cust_id =#{cust_id}"
       #puts "sleeping 3"
@@ -1076,7 +1088,7 @@ class ChangeCustSizes
 
       
       
-      my_data_recharge = {"properties" => [{"name" => "leggings", "value" => bottom_sizes }, {"name" => "sports-bra", "value" =>bra_sizes }, {"name" => "tops", "value" => top_sizes }]}.to_json
+      
       puts my_data_recharge
       #send_size_change_recharge = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_subscription_id}", :headers => $my_change_charge_header, :body => my_data_recharge)
       #puts send_size_change_recharge
