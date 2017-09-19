@@ -10,6 +10,7 @@ require_relative "influencer_reader"
 
 
 #StandaloneMigrations::Tasks.load_tasks
+#comment.
 
 
 desc "load influencer orders into database"
