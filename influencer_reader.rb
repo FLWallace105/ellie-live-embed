@@ -270,7 +270,7 @@ module InfluencerUtility
                                 "value": "true"
                             },                    
                             {
-                                "name": "sports-bra",
+                                "name": "sports-jacket",
                                 "value": mysportsbra
                             },
                             {
@@ -355,10 +355,6 @@ module InfluencerUtility
                                 "name": "main-product",
                                 "value": "true"
                             },                    
-                            {
-                                "name": "sports-bra",
-                                "value": mysportsbra
-                            },
                             {
                                 "name": "tops",
                                 "value": mytops

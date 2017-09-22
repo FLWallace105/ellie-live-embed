@@ -349,10 +349,6 @@ end
                         "value": "true"
                     },                    
                     {
-                        "name": "sports-bra",
-                        "value": mysportsbra
-                    },
-                    {
                         "name": "tops",
                         "value": mytops
                     },
