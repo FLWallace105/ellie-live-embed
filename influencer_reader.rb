@@ -362,6 +362,10 @@ module InfluencerUtility
                             {
                                 "name": "tops",
                                 "value": mytops
+                            }, 
+                            {
+                                "name": "sports-jacket",
+                                "value": mytops 
                             }
                         ]
                       }
