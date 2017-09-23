@@ -271,7 +271,7 @@ module InfluencerUtility
                             },                    
                             {
                                 "name": "sports-jacket",
-                                "value": mysportsbra
+                                "value": mytops
                             },
                             {
                                 "name": "tops",
