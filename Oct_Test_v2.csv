@@ -1,0 +1,4 @@
+FirstName,LastName,Address1,Address2,City,State,zip,email,phone(optional),BraSize,TopSize,BottomSize,SportsJacketSize,3Item
+Justin,Zarabi,5553 B Bandini Blvd,,Bell,CA,90201,Jzarabi@fambrands.com,,S,XS,XS,XL,no
+Justin 2,Zarabi,5553 B Bandini Blvd,,Bell,CA,90201,Jzarabi@fambrands.com,,M,L,M,XS,yes
+Justin 3,Zarabi,5553 B Bandini Blvd,,Bell,CA,90201,Jzarabi@fambrands.com,,S,S,S,M,no

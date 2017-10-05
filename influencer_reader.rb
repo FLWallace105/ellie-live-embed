@@ -36,9 +36,9 @@ module InfluencerUtility
         def readincodes
             uri = URI.parse(ENV['DATABASE_URL'])
             conn = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
-            my_insert = "insert into influencers (first_name, last_name, address1, address2, city, state, zip, email, phone, bra_size, top_size, bottom_size, three_item) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)"
+            my_insert = "insert into influencers (first_name, last_name, address1, address2, city, state, zip, email, phone, bra_size, top_size, bottom_size, sports_jacket_size, three_item) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)"
             conn.prepare('statement1', "#{my_insert}")
-            CSV.foreach('kylie_sample_influencer.csv', :encoding => 'ISO-8859-1', :headers => true) do |row|
+            CSV.foreach('Oct_Influencer_CSV2.csv', :encoding => 'ISO-8859-1', :headers => true) do |row|
                 #puts row.inspect
                 first_name = row['FirstName']
                 last_name = row['LastName']
@@ -52,6 +52,7 @@ module InfluencerUtility
                 bra_size = row['BraSize']
                 top_size = row['TopSize']
                 bottom_size = row['BottomSize']
+                sports_jacket = row['SportsJacketSize']
                 three_item = row['3Item']
                 puts "#{first_name}, #{last_name}, #{address1}, #{address2}, #{city}, #{state}, #{zip}, #{email}, #{phone}, #{bra_size}, #{top_size}, #{bottom_size}, #{three_item}"
                 if three_item.downcase == "yes" || three_item.downcase == "y"
@@ -64,7 +65,7 @@ module InfluencerUtility
                 #puts row[0]
                 #mycode = row[0].to_str
                 #puts mycode
-                conn.exec_prepared('statement1', [first_name, last_name, address1, address2, city, state, zip, email, phone, bra_size, top_size, bottom_size, three_item])
+                conn.exec_prepared('statement1', [first_name, last_name, address1, address2, city, state, zip, email, phone, bra_size, top_size, bottom_size, sports_jacket, three_item])
             end
                 conn.close
         end
@@ -92,8 +93,9 @@ module InfluencerUtility
                 bra_size = row['bra_size']
                 top_size = row['top_size']
                 bottom_size = row['bottom_size']
+                sports_jacket_size = row['sports_jacket_size']
                 three_item = row['three_item']
-                puts "#{first_name}, #{last_name}, #{address1}, #{address2}, #{city}, #{state}, #{zip}, #{email}, #{phone}, #{bra_size}, #{top_size}, #{bottom_size}, #{three_item}"
+                puts "#{first_name}, #{last_name}, #{address1}, #{address2}, #{city}, #{state}, #{zip}, #{email}, #{phone}, #{bra_size}, #{top_size}, #{bottom_size}, #{sports_jacket_size}, #{three_item}"
                 ShopifyAPI::Base.site = "https://#{$apikey}:#{$password}@#{$shopname}.myshopify.com/admin"
                 my_customer = ShopifyAPI::Customer.search(query: email)
                 puts my_customer.inspect
@@ -144,7 +146,7 @@ module InfluencerUtility
                 #puts three_item
                 if three_item == 't'
                     puts "We need to process this order as a three item order"
-                    add_shopify_three_pack_order(email, bottom_size, bra_size, top_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, SHOPIFY_ELLIE_3PACK_ID, INFLUENCER_ORDER, SHOP_WAIT)
+                    add_shopify_three_pack_order(email, bottom_size, bra_size, top_size, sports_jacket_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, SHOPIFY_ELLIE_3PACK_ID, INFLUENCER_ORDER, SHOP_WAIT)
                     #code to add in access time and set processed = f
 
 
@@ -153,7 +155,7 @@ module InfluencerUtility
                     myaccessories1 = "One Size"
                     myaccessories2 = "One Size"
     
-                    add_shopify_order(email, myaccessories1, myaccessories2, bottom_size, bra_size, top_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_PRODUCT_ID, INFLUENCER_ORDER, SHOP_WAIT)
+                    add_shopify_order(email, myaccessories1, myaccessories2, bottom_size, bra_size, top_size, sports_jacket_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_PRODUCT_ID, INFLUENCER_ORDER, SHOP_WAIT)
 
                 end
                 mytime = DateTime.now.strftime("%Y-%m-%d %H:%M:%S")
@@ -234,7 +236,7 @@ module InfluencerUtility
         end
 
 
-          def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
+          def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, mysports_jacket, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
             puts "Adding Order for Influencer -- "
             puts "prod_id=#{prod_id}"
             my_order = {
@@ -271,7 +273,7 @@ module InfluencerUtility
                             },                    
                             {
                                 "name": "sports-jacket",
-                                "value": mytops
+                                "value": mysports_jacket
                             },
                             {
                                 "name": "tops",
@@ -327,7 +329,7 @@ module InfluencerUtility
 
 
 
-        def add_shopify_three_pack_order(myemail, myleggings, mysportsbra, mytops, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
+        def add_shopify_three_pack_order(myemail, myleggings, mysportsbra, mytops, mysports_jacket, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
             puts "Adding Order for Influencer -- "
             puts "prod_id=#{prod_id}"
             my_order = {
@@ -361,7 +363,7 @@ module InfluencerUtility
                             }, 
                             {
                                 "name": "sports-jacket",
-                                "value": mytops 
+                                "value": mysports_jacket 
                             }
                         ]
                       }

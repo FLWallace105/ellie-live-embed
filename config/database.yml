@@ -1,20 +1,21 @@
 development:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
+  username: FWallace
   database: influencers_development
   pool: 2
   url: <%= ENV['DATABASE_URL'] %>
 
-  test:
+test:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   database: influencers_test
   pool: 2
   url: <%= ENV['DATABASE_URL'] %>
 
-  production:
+production:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   database: influencers_production
   pool: 2
   url: <%= ENV['DATABASE_URL'] %>

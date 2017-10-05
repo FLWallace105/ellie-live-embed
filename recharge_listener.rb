@@ -20,8 +20,9 @@ configure do
   enable :logging
   set :server, :puma
   Dotenv.load
-  set :protection, :except => [:json_csrf]
-
+  #set :protection, :except => [:json_csrf]
+  
+  
   mime_type :application_javascript, 'application/javascript'
   mime_type :application_json, 'application/json'
   #$recharge_access_token = ENV['RECHARGE_ACCESS_TOKEN']
@@ -64,6 +65,8 @@ configure do
   SHOPIFY_MONTHLY_BOX_AUTORENEW_ID = ENV['SHOPIFY_MONTHLY_BOX_AUTORENEW_ID']
 
 end
+
+
 
 def initialize
     #Dotenv.load
@@ -140,6 +143,7 @@ end
 
 post '/funky-next-month-preview' do
   content_type :application_javascript
+  #response.headers['Access-Control-Allow-Origin'] = 'http://example.com'
   status 200
   puts "Doing Funky Skip Next Month Preview"
   puts params.inspect
