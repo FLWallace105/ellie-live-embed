@@ -158,29 +158,33 @@ module FixMonth
     #Get first day of current month
     my_today = Date.today.beginning_of_month
 
-    add_onetime_subscription = false
-    active_subscriptions = false
-    all_subscriptions_customer = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}", :headers => my_get_header)
-    check_recharge_limits(all_subscriptions_customer)
-    all_subscriptions_customer.parsed_response['subscriptions'].each do |subs|
-      #puts subs.inspect
-      status = subs['status']
-      created_at = subs['created_at']
-      my_created_at = DateTime.strptime(created_at, '%Y-%m-%dT%H:%M:%S')
-      if status != "CANCELLED" && status != "ONETIME"
-        active_subscriptions = true
-        puts "--------------"
-        puts subs.inspect
-        puts "-------------"
-        #puts "created_at date is #{created_at} and first day current month is #{my_today.inspect}"
-        if my_today > my_created_at
-          puts "created_at date is #{created_at} and first day current month is #{my_today.inspect}"
-          puts "We can now add a subscription because it was not created this month"
-          add_onetime_subscription = true
-          end
-        end
+    #add_onetime_subscription = false
+    #active_subscriptions = false
+    #testing branch, set above to true
+    add_onetime_subscription = true
+    active_subscriptions = true
 
-      end
+   # all_subscriptions_customer = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}", :headers => my_get_header)
+   # check_recharge_limits(all_subscriptions_customer)
+   # all_subscriptions_customer.parsed_response['subscriptions'].each do |subs|
+      #puts subs.inspect
+    #  status = subs['status']
+    #  created_at = subs['created_at']
+     # my_created_at = DateTime.strptime(created_at, '%Y-%m-%dT%H:%M:%S')
+      #if status != "CANCELLED" && status != "ONETIME"
+     #   active_subscriptions = true
+     #   puts "--------------"
+      #  puts subs.inspect
+      #  puts "-------------"
+        #puts "created_at date is #{created_at} and first day current month is #{my_today.inspect}"
+       # if my_today > my_created_at
+       #   puts "created_at date is #{created_at} and first day current month is #{my_today.inspect}"
+        #  puts "We can now add a subscription because it was not created this month"
+        #  add_onetime_subscription = true
+       #   end
+      #  end
+
+      #end
 
     if add_onetime_subscription
       #add the one time subscription
