@@ -316,8 +316,9 @@ end
       api_percentage_used = my_numerator/my_denominator.to_f
       puts "API Call percentage used is #{api_percentage_used.round(2)}"
       if api_percentage_used > 0.6
-        puts "Must sleep #{RECH_WAIT} seconds"
-        sleep RECH_WAIT.to_i
+        puts "Must sleep 8 seconds"
+        sleep 8
+        puts "done sleeping"
       end
 
   end

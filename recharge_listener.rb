@@ -141,12 +141,21 @@ get '/hello' do
   "Hello, success, thanks for installing me!"
 end
 
+post '/alt_cust_skip' do
+  status 200
+  puts "Doing the alternate customer skip after they declined alternate product this month"
+  puts params.inspect
+  Resque.enqueue(AltSkip, params)
+
+end
+
 post '/funky-next-month-preview' do
   content_type :application_javascript
   #response.headers['Access-Control-Allow-Origin'] = 'http://example.com'
   status 200
   puts "Doing Funky Skip Next Month Preview"
   puts params.inspect
+ 
 
 end
 
@@ -441,6 +450,43 @@ helpers do
 
   end
 
+end
+
+class AltSkip
+  extend FixMonth
+  @queue = "alt_skip"
+  def self.perform(params)
+    #puts "Got params"
+    puts "received params #{params.inspect}"
+    shopify_customer_id = params['shopify_id']
+    action = params['action']
+    unless action == 'skip_month'
+      puts "We cannot do anything, action must be skip_month not #{action}"
+    else
+      puts "skipping the month for customer #{shopify_customer_id}"
+      get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_customer_id}", :headers => $my_get_header)
+      #puts get_sub_info.inspect
+      check_recharge_limits(get_sub_info)
+      mysub = get_sub_info.parsed_response['subscriptions']
+      mysub.each do |subs|
+        
+        #puts subs.inspect
+        temp_product_id = subs['shopify_product_id'].to_s
+        temp_product_title = subs['product_title']
+        temp_status = subs['status']
+        temp_customer_id = subs['customer_id']
+        temp_subscription_id = subs['id']
+        if temp_status == 'ACTIVE' && (temp_product_id == "8204555081" || temp_product_id == "10016265938")
+          puts "--------"
+          puts "#{temp_product_id}, #{temp_product_title}, #{temp_status}"
+
+        puts "--------"
+        end
+      end
+      puts "Done with subscription parsing!"
+    end
+
+  end
 end
 
 class SubscriptionDeleted

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005214624) do
+ActiveRecord::Schema.define(version: 20171023205115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customer_skips", force: :cascade do |t|
+    t.string "shopify_id"
+    t.string "subscription_id"
+    t.datetime "skip_date"
+    t.string "skip_reason"
+    t.string "skip_status"
+    t.index ["shopify_id"], name: "index_customer_skips_on_shopify_id"
+    t.index ["subscription_id"], name: "index_customer_skips_on_subscription_id"
+  end
 
   create_table "influencers", force: :cascade do |t|
     t.string "first_name"
