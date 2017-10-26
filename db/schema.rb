@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025193112) do
+ActiveRecord::Schema.define(version: 20171026211850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171025193112) do
     t.string "alt_variant_id"
     t.string "alt_product_title"
     t.datetime "date_switched"
+    t.boolean "update_success", default: false
     t.index ["shopify_id"], name: "index_customer_alt_product_on_shopify_id"
     t.index ["subscription_id"], name: "index_customer_alt_product_on_subscription_id"
   end

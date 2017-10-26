@@ -630,6 +630,14 @@ def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_cu
 
   reset_subscriber_date = HTTParty.post("https://api.rechargeapps.com/subscriptions/#{subelement}/set_next_charge_date", :headers => my_change_charge_header, :body => body)
   puts reset_subscriber_date.inspect
+
+  #check error
+  my_recharge_ok = false
+  if reset_subscriber_date.code == 200
+    my_recharge_ok = true
+  end
+
+
   check_recharge_limits(reset_subscriber_date)
   #get charges for that subscription, skip the one this month
   #GET /charges?subscription_id=14562
@@ -666,7 +674,7 @@ def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_cu
   end
 
   puts uri, shopify_customer_id, my_charge_id
-  my_result = my_conn.exec_prepared('statement1', [shopify_customer_id, subelement, my_charge_id, my_now_str, my_next_month_str, true, reason])
+  my_result = my_conn.exec_prepared('statement1', [shopify_customer_id, subelement, my_charge_id, my_now_str, my_next_month_str, my_recharge_ok, reason])
   puts my_result.inspect
 
 end
@@ -746,7 +754,7 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
   
   myuri = URI.parse(uri)
   my_conn =  PG.connect(myuri.hostname, myuri.port, nil, nil, myuri.path[1..-1], myuri.user, myuri.password)
-  my_insert = "insert into customer_alt_product (shopify_id, subscription_id, alt_product_id, alt_variant_id, alt_product_title, date_switched) values ($1, $2, $3, $4, $5, $6)"
+  my_insert = "insert into customer_alt_product (shopify_id, subscription_id, alt_product_id, alt_variant_id, alt_product_title, date_switched, update_success) values ($1, $2, $3, $4, $5, $6, $7)"
   my_conn.prepare('statement1', "#{my_insert}") 
 
 
@@ -755,11 +763,14 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
   body_as_hash = {}
   continue_update_sub = false
   if my_product_id == monthly_box_id
-    body = {"product_title" => alt_monthly_box_title, "shopify_product_id" => alt_monthly_box_id, "shopify_variant_id" => alt_monthly_box_variant_id, sku => alt_monthly_box_sku}
+    puts "monthly_box_id = #{monthly_box_id}"
+    puts "Changing Monthly Box to Alternate"
+    body = {"product_title" => alt_monthly_box_title, "shopify_product_id" => alt_monthly_box_id, "shopify_variant_id" => alt_monthly_box_variant_id, "sku" => alt_monthly_box_sku}
     body_as_hash = body
     body = body.to_json
     continue_update_sub = true
   elsif my_product_id == ellie_threepack_id
+    puts "Changing Ellie 3- Pack to Alternate"
     body = {"product_title" => alt_ellie_3pack_title, "shopify_product_id" => alt_ellie_3pack_id, "shopify_variant_id" => alt_ellie_3pack_variant_id, "sku" => alt_ellie_3pack_sku}
     body_as_hash = body
     body = body.to_json
@@ -776,6 +787,13 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
     #PUT /subscriptions/<subscription_id>
     my_update_sub = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_sub_id}", :headers => my_change_header, :body => body)
     puts my_update_sub.inspect
+
+    #check success status
+    update_success = false
+    if my_update_sub.code == 200
+      update_success = true
+      puts "****** Hooray We have no errors **********"
+    end
     check_recharge_limits(my_update_sub)
     #insert into DB here
     alt_product_id = body_as_hash['shopify_product_id']
@@ -784,7 +802,7 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
     my_now = Date.today
     my_now_str = my_now.strftime("%Y-%m-%d")
 
-    my_result = my_conn.exec_prepared('statement1', [my_shopify_id, my_sub_id, alt_product_id, alt_variant_id, alt_product_title, my_now_str])
+    my_result = my_conn.exec_prepared('statement1', [my_shopify_id, my_sub_id, alt_product_id, alt_variant_id, alt_product_title, my_now_str, update_success])
     puts my_result.inspect
 
 
