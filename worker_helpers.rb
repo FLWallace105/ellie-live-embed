@@ -594,4 +594,206 @@ def check_shopify_call_limit(headerinfo, shop_wait)
 
 end
 
+def check_next_charge_this_month(scheduled_at)
+  my_scheduled_at = DateTime.strptime(scheduled_at, "%Y-%m-%dT%H:%M:%S")
+  puts "my_scheduled_at = #{scheduled_at}, #{my_scheduled_at.inspect}"
+  my_now = Date.today
+  my_begin_month = my_now.beginning_of_month
+  my_end_month = my_now.end_of_month
+  if (my_scheduled_at <= my_end_month) && (my_scheduled_at >= my_begin_month)
+    puts "can skip this sub"
+    return true
+  else
+    puts "can't skip this sub, next charge date is the in the next month"
+    return false
+  end
+end
+
+def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_customer_id, uri, reason)
+  puts "Now skipping this sub"
+  #POST /subscriptions/<subscription_id>/set_next_charge_date
+  my_now = Date.today
+  my_now_str = my_now.strftime("%Y-%m-%d")
+  my_end_month = my_now.end_of_month
+  my_end_month_str = my_end_month.strftime("%Y-%m-%d")
+  my_next_month = my_now >> 1
+  my_next_month_str = my_next_month.strftime("%Y-%m-%d")
+  body = { "date" => my_next_month_str }.to_json
+
+  myuri = URI.parse(uri)
+  my_conn =  PG.connect(myuri.hostname, myuri.port, nil, nil, myuri.path[1..-1], myuri.user, myuri.password)
+  my_insert = "insert into customer_skips (shopify_id, subscription_id, charge_id, skipped_on, skipped_to, skip_status, skip_reason) values ($1, $2, $3, $4, $5, $6, $7)"
+  my_conn.prepare('statement1', "#{my_insert}") 
+
+
+
+
+  reset_subscriber_date = HTTParty.post("https://api.rechargeapps.com/subscriptions/#{subelement}/set_next_charge_date", :headers => my_change_charge_header, :body => body)
+  puts reset_subscriber_date.inspect
+  check_recharge_limits(reset_subscriber_date)
+  #get charges for that subscription, skip the one this month
+  #GET /charges?subscription_id=14562
+  #GET /charges?date_min=2016-05-18&date_max=2016-06-18
+  subscriber_charges = HTTParty.get("https://api.rechargeapps.com/charges?subscription_id=#{subelement}&date_min=#{my_now_str}&date_max=#{my_end_month_str}", :headers => my_get_header)
+  check_recharge_limits(subscriber_charges)
+  puts "Charge info for this subscription #{subelement} ==> #{subscriber_charges}"
+  charge_info = subscriber_charges.parsed_response
+  puts charge_info.inspect
+  my_charge = charge_info['charges']
+  my_charge_id = ""
+  my_empty = []
+  puts my_charge.inspect
+  if my_charge.empty? 
+    my_charge.each do |myc|
+      puts "-------"
+      puts myc.inspect
+      my_charge_id = myc['id']
+      #POST /charges/<charge_id>/skip
+      puts "**********"
+      puts "skipping charge for #{my_charge_id}"
+      body = { "subscription_id": subelement }.to_json
+      my_skip_charge = HTTParty.post("https://api.rechargeapps.com/charges/#{my_charge_id}/skip", :headers => my_change_charge_header, :body => body)
+      puts my_skip_charge.inspect
+      check_recharge_limits(my_skip_charge)
+      
+      puts "***********"
+      puts "--------"
+    end
+    
+
+  else
+    puts "No charges queued to skip for this subscription: #{subscription_id}"
+  end
+
+  puts uri, shopify_customer_id, my_charge_id
+  my_result = my_conn.exec_prepared('statement1', [shopify_customer_id, subelement, my_charge_id, my_now_str, my_next_month_str, true, reason])
+  puts my_result.inspect
+
+end
+
+def get_customer_subscriptions(shopify_id, my_get_header, my_change_header, uri, my_id_hash, my_alt_prod_hash)
+  get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_id}", :headers => my_get_header)
+  #puts get_sub_info.inspect
+  my_sub_array = Array.new
+  monthly_box_id = my_id_hash['monthly_box_id']
+  ellie_threepack_id = my_id_hash['ellie_threepack_id']
+  check_recharge_limits(get_sub_info)
+  mysub = get_sub_info.parsed_response['subscriptions']
+  mysub.each do |subs|
+    
+    #puts subs.inspect
+    
+
+    temp_product_id = subs['shopify_product_id'].to_s
+    temp_product_title = subs['product_title']
+    temp_status = subs['status']
+    temp_customer_id = subs['customer_id']
+    temp_subscription_id = subs['id']
+    if temp_status == 'ACTIVE' && (temp_product_id == monthly_box_id || temp_product_id == ellie_threepack_id)
+      if !subs['next_charge_scheduled_at'].nil?
+        temp_next_charge = subs['next_charge_scheduled_at']
+        #figure out if next_charge_scheduled_at is this month
+        puts "checking next charge scheduled_at, #{temp_next_charge}"
+        can_we_skip = check_next_charge_this_month(temp_next_charge)
+      else
+        puts "next charge scheduled at is nil"
+      end
+      puts "--------"
+      puts "#{temp_product_id}, #{temp_product_title}, #{temp_status}"
+      if can_we_skip
+        puts "Adding subscription #{temp_subscription_id} to skip array"
+        temp_hash = {"subscription_id" => temp_subscription_id, "product_id" => temp_product_id, "shopify_id" => shopify_id}
+        my_sub_array.push(temp_hash)
+      end
+
+    puts "--------"
+    end
+  end
+  puts "Done with subscription parsing!"
+
+  
+  if !my_sub_array.empty?
+    puts "WE have the following subscriptions to change the next_charge_date and associated charges"
+    my_sub_array.each do |subelement|
+    puts "Changing subscription #{subelement.inspect} to reflect alternative product this month"
+    
+    update_sub_alternate_product(subelement, my_change_header, uri, my_id_hash, my_alt_prod_hash)
+    end
+  end
+
+end
+
+def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_alt_prod_hash)
+  my_sub_id = my_hash['subscription_id']
+  my_product_id = my_hash['product_id']
+  my_shopify_id = my_hash['shopify_id']
+  monthly_box_id = my_id_hash['monthly_box_id']
+  ellie_threepack_id = my_id_hash['ellie_threepack_id']
+
+  alt_monthly_box_title = my_alt_prod_hash['alt_monthly_box_title']
+  alt_monthly_box_id = my_alt_prod_hash['alt_monthly_box_id']
+  alt_monthly_box_variant_id = my_alt_prod_hash['alt_monthly_box_variant_id']
+  alt_monthly_box_sku = my_alt_prod_hash['alt_monthly_box_sku']
+
+  alt_ellie_3pack_id = my_alt_prod_hash['alt_ellie_3pack_id']
+  alt_ellie_3pack_sku = my_alt_prod_hash['alt_ellie_3pack_sku']
+  alt_ellie_3pack_title = my_alt_prod_hash['alt_ellie_3pack_title']
+  alt_ellie_3pack_variant_id = my_alt_prod_hash['alt_ellie_3pack_variant_id']
+
+  
+
+  puts "Updating subscription #{my_sub_id}"
+  
+  myuri = URI.parse(uri)
+  my_conn =  PG.connect(myuri.hostname, myuri.port, nil, nil, myuri.path[1..-1], myuri.user, myuri.password)
+  my_insert = "insert into customer_alt_product (shopify_id, subscription_id, alt_product_id, alt_variant_id, alt_product_title, date_switched) values ($1, $2, $3, $4, $5, $6)"
+  my_conn.prepare('statement1', "#{my_insert}") 
+
+
+
+  body = {}
+  body_as_hash = {}
+  continue_update_sub = false
+  if my_product_id == monthly_box_id
+    body = {"product_title" => alt_monthly_box_title, "shopify_product_id" => alt_monthly_box_id, "shopify_variant_id" => alt_monthly_box_variant_id, sku => alt_monthly_box_sku}
+    body_as_hash = body
+    body = body.to_json
+    continue_update_sub = true
+  elsif my_product_id == ellie_threepack_id
+    body = {"product_title" => alt_ellie_3pack_title, "shopify_product_id" => alt_ellie_3pack_id, "shopify_variant_id" => alt_ellie_3pack_variant_id, "sku" => alt_ellie_3pack_sku}
+    body_as_hash = body
+    body = body.to_json
+    continue_update_sub = true
+  else
+    puts "Neither a Monthly Box nor Ellie 3- Pack product: #{my_sub_id} thus we can do nothing"
+  end
+
+  if continue_update_sub
+    puts "Updating Subscription properties"
+    puts body_as_hash.inspect
+    #puts my_change_header.inspect
+    #puts body.inspect
+    #PUT /subscriptions/<subscription_id>
+    my_update_sub = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_sub_id}", :headers => my_change_header, :body => body)
+    puts my_update_sub.inspect
+    check_recharge_limits(my_update_sub)
+    #insert into DB here
+    alt_product_id = body_as_hash['shopify_product_id']
+    alt_variant_id = body_as_hash['shopify_variant_id']
+    alt_product_title = body_as_hash['product_title']
+    my_now = Date.today
+    my_now_str = my_now.strftime("%Y-%m-%d")
+
+    my_result = my_conn.exec_prepared('statement1', [my_shopify_id, my_sub_id, alt_product_id, alt_variant_id, alt_product_title, my_now_str])
+    puts my_result.inspect
+
+
+  else
+    puts "We can't update the sub with an alternate product as the product type is wrong."
+  end
+
+
+
+end
+
 end

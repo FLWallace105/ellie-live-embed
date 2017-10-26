@@ -74,6 +74,19 @@ def initialize
     @secret = ENV['SHOPIFY_SHARED_SECRET'] 
     @app_url = "ellie-live-embed.herokuapp.com"
     @tokens = {}
+    @uri = URI.parse(ENV['DATABASE_URL'])
+    @monthly_box_id = ENV['SHOPIFY_MONTHLY_BOX_ID']
+    @ellie_threepack_id = ENV['SHOPIFY_ELLIE_3PACK_ID']
+    
+    @alt_monthly_box_sku = ENV['ALT_MONTHLY_BOX_SKU']
+    @alt_monthly_box_title = ENV['ALT_MONTHLY_BOX_TITLE']
+    @alt_monthly_box_id = ENV['ALT_MONTHLY_BOX_ID']
+    @alt_monthly_box_variant_id = ENV['ALT_MONTHLY_BOX_VARIANT_ID']
+    @alt_ellie_3pack_id = ENV['ALT_ELLIE_3PACK_ID']
+    @alt_ellie_3pack_sku = ENV['ALT_ELLIE_3PACK_SKU']
+    @alt_ellie_3pack_title = ENV['ALT_ELLIE_3PACK_TITLE']
+    @alt_ellie_3pack_variant_id = ENV['ALT_ELLIE_3PACK_VARIANT_ID']
+
     super
   end
 
@@ -144,10 +157,33 @@ end
 post '/alt_cust_skip' do
   status 200
   puts "Doing the alternate customer skip after they declined alternate product this month"
+  params['uri'] = @uri
+  params['monthly_box_id'] = @monthly_box_id
+  params['ellie_threepack_id'] = @ellie_threepack_id
   puts params.inspect
   Resque.enqueue(AltSkip, params)
 
 end
+
+post '/alt_product_choose' do
+  status 200
+  puts "Doing the switch customer this month to the alternate product this month"
+  params['uri'] = @uri
+  params['monthly_box_id'] = @monthly_box_id
+  params['ellie_threepack_id'] = @ellie_threepack_id
+  params['alt_monthly_box_sku'] = @alt_monthly_box_sku
+  params['alt_monthly_box_title'] = @alt_monthly_box_title
+  params['alt_monthly_box_id'] = @alt_monthly_box_id
+  params['alt_monthly_box_variant_id'] = @alt_monthly_box_variant_id
+  params['alt_ellie_3pack_id'] = @alt_ellie_3pack_id
+  params['alt_ellie_3pack_sku'] = @alt_ellie_3pack_sku
+  params['alt_ellie_3pack_title'] = @alt_ellie_3pack_title
+  params['alt_ellie_3pack_variant_id'] = @alt_ellie_3pack_variant_id
+  
+  puts params.inspect
+  Resque.enqueue(AltChoose, params)
+
+end 
 
 post '/funky-next-month-preview' do
   content_type :application_javascript
@@ -452,6 +488,39 @@ helpers do
 
 end
 
+class AltChoose
+  extend FixMonth
+  @queue = "alt_choose"
+  def self.perform(params)
+    puts "Got params --> #{params.inspect}"
+    action = params['action']
+    uri = params['uri']
+    shopify_id = params['shopify_id']
+    monthly_box_id = params['monthly_box_id']
+    ellie_threepack_id = params['ellie_threepack_id']
+    my_id_hash = {"monthly_box_id" => monthly_box_id, "ellie_threepack_id" => ellie_threepack_id }
+
+    alt_monthly_box_sku = params['alt_monthly_box_sku']
+    alt_monthly_box_title = params['alt_monthly_box_title']
+    alt_monthly_box_id = params['alt_monthly_box_id']
+    alt_monthly_box_variant_id = params['alt_monthly_box_variant_id']
+    alt_ellie_3pack_id = params['alt_ellie_3pack_id']
+    alt_ellie_3pack_sku = params['alt_ellie_3pack_sku']
+    alt_ellie_3pack_title = params['alt_ellie_3pack_title']
+    alt_ellie_3pack_variant_id = params['alt_ellie_3pack_variant_id']
+    my_alt_prod_hash = {"alt_monthly_box_sku" => alt_monthly_box_sku, "alt_monthly_box_title" => alt_monthly_box_title, "alt_monthly_box_id" => alt_monthly_box_id, "alt_monthly_box_variant_id" => alt_monthly_box_variant_id, "alt_ellie_3pack_id" => alt_ellie_3pack_id, "alt_ellie_3pack_sku" => alt_ellie_3pack_sku, "alt_ellie_3pack_title" => alt_ellie_3pack_title, "alt_ellie_3pack_variant_id" => alt_ellie_3pack_variant_id}
+
+    
+    unless action == "alternate_collection"
+      puts "We cannot do anything, action must alternate_collection not #{action}"
+    else
+      puts "Choosing alternate product for customer this month"
+      get_customer_subscriptions(shopify_id, $my_get_header, $my_change_charge_header, uri, my_id_hash, my_alt_prod_hash)
+    end
+
+  end
+end
+
 class AltSkip
   extend FixMonth
   @queue = "alt_skip"
@@ -460,30 +529,56 @@ class AltSkip
     puts "received params #{params.inspect}"
     shopify_customer_id = params['shopify_id']
     action = params['action']
+    uri = params['uri']
+    reason = params['reason']
+    monthly_box_id = params['monthly_box_id']
+    ellie_threepack_id = params['ellie_threepack_id']
     unless action == 'skip_month'
       puts "We cannot do anything, action must be skip_month not #{action}"
     else
       puts "skipping the month for customer #{shopify_customer_id}"
       get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_customer_id}", :headers => $my_get_header)
       #puts get_sub_info.inspect
+      my_sub_array = Array.new
       check_recharge_limits(get_sub_info)
       mysub = get_sub_info.parsed_response['subscriptions']
       mysub.each do |subs|
         
         #puts subs.inspect
+        
+
         temp_product_id = subs['shopify_product_id'].to_s
         temp_product_title = subs['product_title']
         temp_status = subs['status']
         temp_customer_id = subs['customer_id']
         temp_subscription_id = subs['id']
-        if temp_status == 'ACTIVE' && (temp_product_id == "8204555081" || temp_product_id == "10016265938")
+        if temp_status == 'ACTIVE' && (temp_product_id == monthly_box_id || temp_product_id == ellie_threepack_id)
+          if !subs['next_charge_scheduled_at'].nil?
+            temp_next_charge = subs['next_charge_scheduled_at']
+            #figure out if next_charge_scheduled_at is this month
+            puts "checking next charge scheduled_at, #{temp_next_charge}"
+            can_we_skip = check_next_charge_this_month(temp_next_charge)
+          else
+            puts "next charge scheduled at is nil"
+          end
           puts "--------"
           puts "#{temp_product_id}, #{temp_product_title}, #{temp_status}"
+          if can_we_skip
+            puts "Adding subscription #{temp_subscription_id} to skip array"
+            my_sub_array.push(temp_subscription_id)
+          end
 
         puts "--------"
         end
       end
       puts "Done with subscription parsing!"
+      if !my_sub_array.empty?
+        puts "WE have the following subscriptions to change the next_charge_date and associated charges"
+        my_sub_array.each do |subelement|
+        puts "Skipping subscription #{subelement}"
+        skip_this_sub(subelement, $my_change_charge_header, $my_get_header, shopify_customer_id, uri, reason)
+        end
+      end
     end
 
   end
