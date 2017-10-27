@@ -628,7 +628,7 @@ def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_cu
 
 
 
-  reset_subscriber_date = HTTParty.post("https://api.rechargeapps.com/subscriptions/#{subelement}/set_next_charge_date", :headers => my_change_charge_header, :body => body)
+  reset_subscriber_date = HTTParty.post("https://api.rechargeapps.com/subscriptions/#{subelement}/set_next_charge_date", :headers => my_change_charge_header, :body => body, :timeout => 80)
   puts reset_subscriber_date.inspect
 
   #check error
@@ -785,7 +785,7 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
     #puts my_change_header.inspect
     #puts body.inspect
     #PUT /subscriptions/<subscription_id>
-    my_update_sub = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_sub_id}", :headers => my_change_header, :body => body)
+    my_update_sub = HTTParty.put("https://api.rechargeapps.com/subscriptions/#{my_sub_id}", :headers => my_change_header, :body => body, :timeout => 80)
     puts my_update_sub.inspect
 
     #check success status
@@ -794,7 +794,7 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
       update_success = true
       puts "****** Hooray We have no errors **********"
     end
-    check_recharge_limits(my_update_sub)
+    
     #insert into DB here
     alt_product_id = body_as_hash['shopify_product_id']
     alt_variant_id = body_as_hash['shopify_variant_id']
@@ -804,7 +804,7 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
 
     my_result = my_conn.exec_prepared('statement1', [my_shopify_id, my_sub_id, alt_product_id, alt_variant_id, alt_product_title, my_now_str, update_success])
     puts my_result.inspect
-
+    check_recharge_limits(my_update_sub)
 
   else
     puts "We can't update the sub with an alternate product as the product type is wrong."
