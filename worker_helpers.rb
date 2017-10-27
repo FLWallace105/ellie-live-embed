@@ -612,7 +612,7 @@ end
 def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_customer_id, uri, reason)
   puts "Now skipping this sub"
   #POST /subscriptions/<subscription_id>/set_next_charge_date
-  my_now = Date.today
+  my_now = DateTime.now
   my_now_str = my_now.strftime("%Y-%m-%d %H:%M:%S")
   my_end_month = my_now.end_of_month
   my_end_month_str = my_end_month.strftime("%Y-%m-%d")
@@ -800,7 +800,7 @@ def update_sub_alternate_product(my_hash, my_change_header, uri, my_id_hash, my_
     alt_product_id = body_as_hash['shopify_product_id']
     alt_variant_id = body_as_hash['shopify_variant_id']
     alt_product_title = body_as_hash['product_title']
-    my_now = Date.today
+    my_now = DateTime.now
     my_now_str = my_now.strftime("%Y-%m-%d %H:%M:%S")
 
     my_result = my_conn.exec_prepared('statement1', [my_shopify_id, my_sub_id, alt_product_id, alt_variant_id, alt_product_title, my_now_str, update_success])
