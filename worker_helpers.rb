@@ -674,6 +674,7 @@ def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_cu
   end
 
   puts uri, shopify_customer_id, my_charge_id
+  puts "Now is #{my_now_str}"
   my_result = my_conn.exec_prepared('statement1', [shopify_customer_id, subelement, my_charge_id, my_now_str, my_next_month_str, my_recharge_ok, reason])
   puts my_result.inspect
 
