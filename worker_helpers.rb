@@ -625,7 +625,21 @@ def skip_this_sub(subelement, my_change_charge_header, my_get_header, shopify_cu
   my_insert = "insert into customer_skips (shopify_id, subscription_id, charge_id, skipped_on, skipped_to, skip_status, skip_reason) values ($1, $2, $3, $4, $5, $6, $7)"
   my_conn.prepare('statement1', "#{my_insert}") 
 
+  puts "got so far ..."
+  #first get subscritption info on when the next charge date is, then shift it a month
+  #GET /subscriptions/<subscription_id>
+  subscription_info = HTTParty.get("https://api.rechargeapps.com/subscriptions/#{subelement}", :headers => my_get_header)
+  #puts subscription_info
+  my_next_charge = subscription_info.parsed_response['subscription']['next_charge_scheduled_at']
+  puts "Customer's next charge date is currently #{my_next_charge}"
+  customers_new_charge_date = Date.strptime(my_next_charge, "%Y-%m-%dT%H:%M:%S")
+  customers_new_charge_date = customers_new_charge_date >> 1
+  customers_new_charge_str   = customers_new_charge_date.strftime("%Y-%m-%d")
+  puts "customers new charge date will be #{customers_new_charge_str}"
+  body = { "date" => customers_new_charge_str }.to_json
 
+  
+  
 
 
   reset_subscriber_date = HTTParty.post("https://api.rechargeapps.com/subscriptions/#{subelement}/set_next_charge_date", :headers => my_change_charge_header, :body => body, :timeout => 80)
