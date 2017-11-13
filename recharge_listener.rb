@@ -161,7 +161,14 @@ post '/alt_cust_skip' do
   params['monthly_box_id'] = @monthly_box_id
   params['ellie_threepack_id'] = @ellie_threepack_id
   puts params.inspect
-  Resque.enqueue(AltSkip, params)
+  my_now_date = Date.today
+  my_now_date_int = my_now_date.day
+  if my_now_date_int < 5
+    Resque.enqueue(AltSkip, params)
+  else
+    puts "Today is #{my_now_date.inspect}"
+    puts "We cannot skip, it is #{my_now_date_int} which is later than the 4th of the month"
+  end
 
 end
 
@@ -537,6 +544,7 @@ class AltSkip
       puts "We cannot do anything, action must be skip_month not #{action}"
     else
       puts "skipping the month for customer #{shopify_customer_id}"
+      
       get_sub_info = HTTParty.get("https://api.rechargeapps.com/subscriptions?shopify_customer_id=#{shopify_customer_id}", :headers => $my_get_header)
       #puts get_sub_info.inspect
       my_sub_array = Array.new
