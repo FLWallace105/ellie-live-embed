@@ -38,7 +38,7 @@ module InfluencerUtility
             conn = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
             my_insert = "insert into influencers (first_name, last_name, address1, address2, city, state, zip, email, phone, bra_size, top_size, bottom_size, sports_jacket_size, three_item) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)"
             conn.prepare('statement1', "#{my_insert}")
-            CSV.foreach('november_influencer.csv', :encoding => 'ISO-8859-1', :headers => true) do |row|
+            CSV.foreach('Ellie3ItemInfluencers1_Dec2017.csv', :encoding => 'ISO-8859-1', :headers => true) do |row|
                 #puts row.inspect
                 first_name = row['FirstName']
                 last_name = row['LastName']
