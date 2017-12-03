@@ -17,6 +17,7 @@ INFLUENCER_SKU = ENV['INFLUENCER_SKU']
 INFLUENCER_VARIANT_ID = ENV['INFLUENCER_VARIANT_ID']
 SHOPIFY_ELLIE_3PACK_SKU = ENV['SHOPIFY_ELLIE_3PACK_SKU']
 SHOPIFY_ELLIE_3PACK_VARIANT_ID = ENV['SHOPIFY_ELLIE_3PACK_VARIANT_ID']
+PRODUCT_COLLECTION = ENV['PRODUCT_COLLECTION']
 
 
 module InfluencerUtility
@@ -144,10 +145,12 @@ module InfluencerUtility
                 #add order here
                 #ck for either 3pc or 5pc and construct order from that
                 #puts three_item
+                myproduct_collection = PRODUCT_COLLECTION
+
                 if three_item == 't'
                     puts "We need to process this order as a three item order"
                     myaccessories1 = "One Size"
-                    add_shopify_three_pack_order(email, bottom_size, bra_size, top_size, sports_jacket_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, SHOPIFY_ELLIE_3PACK_ID, INFLUENCER_ORDER, SHOP_WAIT, myaccessories1)
+                    add_shopify_three_pack_order(email, bottom_size, bra_size, top_size, sports_jacket_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, SHOPIFY_ELLIE_3PACK_ID, INFLUENCER_ORDER, SHOP_WAIT, myaccessories1, myproduct_collection)
                     #code to add in access time and set processed = f
 
 
@@ -156,7 +159,7 @@ module InfluencerUtility
                     myaccessories1 = "One Size"
                     myaccessories2 = "One Size"
     
-                    add_shopify_order(email, myaccessories1, myaccessories2, bottom_size, bra_size, top_size, sports_jacket_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_PRODUCT_ID, INFLUENCER_ORDER, SHOP_WAIT)
+                    add_shopify_order(email, myaccessories1, myaccessories2, bottom_size, bra_size, top_size, sports_jacket_size, first_name, last_name, address1, address2, phone, city, state, zip, $apikey, $password, $shopname, INFLUENCER_PRODUCT_ID, INFLUENCER_ORDER, SHOP_WAIT, myproduct_collection)
 
                 end
                 mytime = DateTime.now.strftime("%Y-%m-%d %H:%M:%S")
@@ -237,7 +240,7 @@ module InfluencerUtility
         end
 
 
-          def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, mysports_jacket, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait)
+          def add_shopify_order(myemail, myaccessories1, myaccessories2, myleggings, mysportsbra, mytops, mysports_jacket, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait, myproduct_collection)
             puts "Adding Order for Influencer -- "
             puts "prod_id=#{prod_id}"
             my_order = {
@@ -279,6 +282,10 @@ module InfluencerUtility
                             {
                                 "name": "tops",
                                 "value": mytops
+                            },
+                            {
+                                "name": "product_collection",
+                                "value": myproduct_collection  
                             }
                         ]
                       }
@@ -330,7 +337,7 @@ module InfluencerUtility
 
 
 
-        def add_shopify_three_pack_order(myemail, myleggings, mysportsbra, mytops, mysports_jacket, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait, myaccessories1)
+        def add_shopify_three_pack_order(myemail, myleggings, mysportsbra, mytops, mysports_jacket, myfirstname, mylastname, myaddress1, myaddress2, myphone, mycity, mystate, myzip, apikey, password, shopname, prod_id, influencer_tag, shop_wait, myaccessories1, myproduct_collection)
             puts "Adding Order for Influencer -- "
             puts "prod_id=#{prod_id}"
             my_order = {
@@ -365,6 +372,10 @@ module InfluencerUtility
                             {
                                 "name": "sports-bra",
                                 "value": mysportsbra 
+                            }, 
+                            {
+                                "name": "product_collection",
+                                "value": myproduct_collection  
                             }
                         ]
                       }
