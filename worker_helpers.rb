@@ -354,8 +354,8 @@ end
                         "value": mytops
                     },
                     {
-                        "name": "sports-jacket",
-                        "value": mytops 
+                        "name": "sports-bra",
+                        "value": mysportsbra 
                     }
                 ]
               }
