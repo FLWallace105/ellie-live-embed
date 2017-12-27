@@ -1,0 +1,572 @@
+FirstName,LastName,Address1,Address2,City,State,zip,email,phone(optional),BraSize,TopSize,BottomSize,SportsJacketSize,3Item
+Casey,Messer,323 Nuevo Hacienda Ln NW,,Los Ranchos,NM,87107,cmesser@kob.com,,L,M,L,L,no
+Gabby,David,15049 Sherman Way,Unit i,Van Nuys,CA,91405,gabbyjdavid@outlook.com,,XS,XS,S,XS,no
+Hope,Allen,7170 Bootlegger Dr.,,Helena,MT,59602,Hopescopeofficial@gmail.com,,S,S,S,S,no
+Jacqueline ,Luk,30 Douglas Ct. ,,Staten Island ,NY,10304,jacqueline.c.luk@gmail.com,,XS,XS,XS,XS,no
+Jenny ,Ho,8250 sw 72nd Ct.,Unit 404,Miami,FL,33143,Jennyho86@gmail.com,,M,S,S,S,no
+Lily,Saito,166 Linden Lane,,Princeton ,NJ,08540,lilysaito@yahoo.com,,S,S,S,S,no
+Faith,Ellis,2513 Reid School Road,,Reidsville,NC,27320,faith.engen101@yahoo.com,,S,XS,XS,XS,no
+Katlin,Longfield,661 Invermere Dr,,Sun Prairie,WI,53590,2husketeers@gmail.com,,S,S,S,S,no
+Katie,Perry,1401 Walnut Grove Rd,,Derby,KS,67037,ktbabieyogini@gmail.com,,M,M,M,M,no
+Avori,Henderson,7201 Fountainview Dr,,St. Charles,MO,63303,avori.henderson@gmail.com,217-494-9771,S,S,S,S,no
+Britney,Henderson,P.O. box 594 ,,Garden City,MI,48136,msbritbrat1986@gmail.com,,L,L,L,L,no
+Alison,Hatfield,11650 National Blvd,#35,Los Angeles,CA,90064,alison@worship-worthy.com,,S,S,S,S,no
+Becca  ,Wright  ,4012 Marie Dr,,Springfield  ,IL,62707,beccaxopr@gmail.com,,M,S,M,S,no
+Holly,Graves,350 S Fuller Ave,Tower 36 Apt 5D,Los Angeles ,CA,90036,hgraves123@yahoo.com,,S,S,S,S,no
+Mazie,Beavers,735 Independence Lane,,Acworth  ,GA,30102,typicalmaz@gmail.com,,S,XS,XS,XS,no
+Karla,Ilicic,10333 NE 1st Street,Apt. No. 454,Bellevue,WA,98004,karlatafra@gmail.com,,S,S,XS,S,no
+Ashlee,Barber,5277 Baywater Drive,Bldg. 44,Tampa,FL,33615,ashleeRbarber@gmail.com ,,S,S,S,S,no
+Delia,Brady,8405 Oakton Ln,Apt #3E,Ellicott City,MD,21043,deliabfit@gmail.com,443-474-0353,S,XS,XS,XS,no
+Janay,Flowers,6401 S Westshore Blvd.,Apt 1204,Tampa,FL,33616,janay.flowers@yahoo.com,210-717-7865,S,S,S,S,no
+Maria,Friederichs,10933 Moorpark Street,Apt. 4,North Hollywood,CA,91602,mariarosefitness@yahoo.com,,M,S,S,S,no
+Brittany,Ignas,5350 Burnet Rd  ,Ste7  ,Austin   ,TX,78756,bmignas@gmail.com,,XS,XS,XS,XS,no
+Andrea,Lindsey,843 S. Longmore St. ,Apt. 1205,Mesa    ,AZ,85202,FitDrea100@gmail.com,,S,S,S,S,no
+Alexandra ,Nanos,3219 Seaway Drive ,,New Port Richey ,FL,34652,Alex_nanos@yahoo.com,,S,S,S,S,no
+Maegan,Starks,6575 Kentucky Dr ,,West Jordan   ,UT,84084,Maeganstarks@gmail.com,,S,S,S,S,no
+Nicole,Rönnblom,1038 Manorwood Drive,,Kernersville,NC,27284,nicole.ronnblom@gmail.com,,S,XS,S,XS,no
+Anna,Zimmerman,10921 N McKinley Dr,Apt. 17216,Tampa,FL,33612,anna.zimmerman@verizon.net,941-526-6738,XS,XS,XS,XS,no
+Aimee,Maschhoff,9353 Hopi Trail,,Ooltewah,TN,37363,aimeemasch@hotmail.com,,S,S,S,S,no
+Eryn,Whalen,2127 W Shannon Ave,,Spokane  ,WA,99205,erynwhalenfitness@gmail.com,,L,L,L,L,no
+Kate,Hammond,32 Railtree Hill Rd,,Woodbury  ,CT,06798,purelypalmer@gmail.com,,S,XS,XS,XS,no
+Kelsie,Davenport,P.O. Box 65,,Yellville,AR,72687,kldcompanies.llc@gmail.com,,M,M,S,M,no
+Talita,Martins,128 W 9th St  ,Apt 2,Boston,MA,02127,tali@fearordinary.com,,m,s,s,s,no
+Amy,Plahtinsky,9702 Frost Creek Drive,,Ooltewah,TN,37363,amedbo@yahoo.com,,S,S,S,S,no
+Lindsay,Boone,2414s 400e  ,,Heber City   ,UT,84032,lindsay.boone@yahoo.com,,M,S,S,S,no
+Ana,Rodas,4508 High Top Ct.,,Louisville,KY,40299,anabrv8@gmail.com,,S ,S,S,S,no
+Tara,Sabo,1519 Old Hickory Lane,,Saint Joseph,MI,49085,tara@adailydoseoffit.com,,S,XS,S,XS,no
+Nicole,Wise,1714 W 17th Ave,,Kennewick,WA,99337,tattooedyogimama@gmail.com,707-267-8202,XS,XS,XS,XS,no
+Courtney,Housley,70 Quail Way ,,Logan,Ut,84322,Chousley14@gmail.com,,S,S,S,S,no
+Madelyn,Hayes,747 South Genesee Ave 1/2,,Los Angeles,CA,90036,maddy_hayes@yahoo.com,816-256-0596,S,S,XS,S,no
+Trista,Tripp,331 Cleveland st ,#1205,Clearwater,Fl,33755,justatrippx3@gmail.com,,S,S,S,S,no
+Alexzandra,Peters,103 East Saddleback Road,,West Baldwin,ME,04091,Palexzandra@gmail.com,207-807-3158,XS,XS,S,XS,no
+Nikol,Klein,305 8th St.,,Del Mar,CA,92014,info@nikolklein.com,,XS,XS,S,XS,no
+Ashley,Gilbertson,155 Canal Landing Blvd ,Apt 706 ,Rochester  ,NY,14626,trainingfortreats@hotmail.com,,S,XS,XS,XS,no
+Sydney,Soelberg,42 South 1460 West,,Pleasant Grove,UT,84062,sydsoelb@gmail.com,,M,XS,M,XS,no
+Christen,Dominick,22 Plumer Lane,,Monroe,CT,06468,christendominick2@gmail.com,,S,S,S,S,no
+Rachelle,Dejean,155 N Lake Avenue  ,6th Floor ,Pasadena   ,CA,91101,rachelle@rachelledejean.com,,XS,XS,XS,XS,no
+Chelsea ,Axe  ,413 GLEN WEST DRIVE,,NASHVILLE  ,TN,37215,chelsealaxe@gmail.com,,S,S,M,S,no
+Danielle,Brown,6 Cutts Rd,#38,Kittery,ME,03903,daniellenicolept@gmail.com,603-781-9218,XS,XS,XS,XS,no
+Taylor,Green,240 Baldwin Ave #2,,Jersey City,NJ,07306,taylorjanegreen@gmail.com,,L,M,M,M,no
+Ruth,Lee,14412 S Palo Alto Dr,,Herriman,UT,84096,ruth.luke@dmail.dixie.edu,,S,S,S,S,no
+Victoria,Cleaves,5432 Kensington st ,,Sarasota ,FL,34232,Victoriacleaves2@gmail.com,,S,XS,XS,XS,no
+Tessa,MacGregor,4707 Ohio Ave,,Tampa,FL,33616,tmakattak109@gmail.com,,L,S,M,S,no
+Christine,Chang,21828 Regents Park Circle,,Sterling,VA,20166,winstonandmaya@gmail.com,,S,S,S,S,no
+Hayley,Nicole, 1202 Calebs Way ,,Salisbury ,MD,21804,xoxohnw@gmail.com,,M,S,S,S,no
+Allie,Ninfo,5044 Biloxi Ave ,,North Hollywood ,CA,91601,allie.ninfo@gmail.com,,XS,XS,XS,XS,no
+Molly,Wey,250 Bells Crossing Drive,,Mooresville,NC,28117,Molly@stilettosanddiapers.com,,S,S,S,S,no
+Karissa,Goellner,32W064 Army Trail Rd,,Wayne   ,IL,60184,karissa@subaholic.com,,L,XL,XL,XL,no
+Lauren,Huddleston,3340 S Kenton St. ,#6204,Denver,CO,80014,laurenmhuddleston@gmail.com,,XL,XL,XL,XL,no
+Georgie  ,McCarthy  ,3105 Pebble Beach Rd. ,Apt. 11,Conway   ,AR,72034,thestyletransplant@gmail.com,,S,XS,XS,XS,no
+Brittany  ,Anna,125 n doheny dr  ,#408  ,Los Angeles  ,CA,90048,brittanyedwards.ca@gmail.com,,S,S,S,S,no
+Angelina ,Sciortino,1N163 Darling Street   ,,Carol Stream,IL,60188,angelinasciortino.business@gmail.com,,XS,S,XS,S,no
+Tiffany,Regalado,808 north Franklin Street  ,unit 2501,Tampa,FL,33602,somethingheavenly7@gmail.com,,S,XS,XS,XS,no
+Desiree,Durfee,6111 Apollo Dr.,,Ferndale,WA,98248,durfeedesiree@gmail.com,,S,S,S,S,no
+Allison,Calvaruso,52 Bernadette Road ,,Morganville,NJ,07751,rose97allison@gmail.com,,S,XS,XS,XS,no
+Maria ,Carralero ,7111 LaPlata Hall,3121 Farm Drive ,College Park ,MD,20742,Mcarral2@terpmail.umd.edu,,S,S,S,S,no
+Meriam,Gonzalez,6710 Detroit avenue  ,apt 23,Cleveland ,OH,44102,Meriamrouchdi@gmail.com,,S,S,S,S,no
+Erin,Morgan,6725 Abrego Rd ,Apt 16,Goleta ,CA,93117,emorgan329@gmail.com,,S,S,S,S,no
+Taylor,Murphy,4001 NE 50th St,Apt B,Seattle,WA,98105,taylor.murphysea@gmail.com,360-633-6201,S,S,S,S,no
+Jolaina ,Peltier,111 East Dewey Ave  ,Apt #426,Wharton ,NJ,07885,Peltier.jolaina@gmail.com,,XL,L,L,L,no
+Angela,Quintano,27 Westwood Dr.,,Fair Lawn,NJ,07410,Angela.quintano@chep.com,,S,S,S,S,no
+Allie,Rick,1324 n Harper Ave ,Apt 3,West Hollywood ,CA,90046,Allierick9@gmail.com,,S,XS,S,XS,no
+Aly,Sankey,18912 43RD DR NE,,Arlington,WA,98223,alysankey@gmail.com,,S,S,S,S,no
+Brittney,Semanick,1227 N. Hayworth Avenue,Apt 6,Los Angeles,CA,90046,fitbrittney@gmail.com,,M,M,M,M,no
+Lindsey,Smith,1898 Osage Orange Ave,,Holladay,UT,84124,Campbelllm@gmail.com,,M,S,S,S,no
+Tiffany,Sudarma,110 forest lane ,,berkeley,CA,94708,tiffsudarma@gmail.com,,S,S,S,S,no
+Desiree ,Triolo,18545 University blvd.,Apt. 721,Sugar Land,TX,77479,desireetriolo@gmail.com,,S,XS,XS,XS,no
+Sarah,Yudkin,1823 n monroe street,,Arlington,VA,22207,Sarahyudkin@gmail.com,,M,M,M,M,no
+Mara,Davis,617 South Margene Drive,,Midwest City,OK,73130,Fitgypsylou@gmail.com,,M,M,S,M,no
+Kendallyn,Newton,27827 SE Heiple Rd.,,Eagle Creek  ,OR,97022,shopwithkendallyn@gmail.com,,M,M,M,M,no
+Kaitlyn,Rhodes,2815 Lincoln Ave,,Saint Albans  ,WV,25177,jamminrhodes@gmail.com,,L,M,M,M,no
+Courtney,Glasgow,683 E Seymore dr ,,American Fork,UT,84003,Courtneynsglasgow@gmail.com,,M,S,S,S,no
+Kellie,Ames,415 Enfield Rd., ,Delray Beach    ,FL,33444,mysweatmantra@gmail.com,,M,S,S,S,no
+Nataly,Palma,5831 W Olympic Blvd,Apt 2,Los Angeles,CA,90036,natalympalma@gmail.com,,S,S,S,S,no
+Miranda,Tamaska,7019 Sunnywood Dr,,Nashville,TN,37211,mirandasouthernblog@gmail.com,,S,M,M,M,no
+Tiffany,Campbell,1826 sandhill crane dr,,fort pierce,FL,34982,tiffany@arrowsandawe.com,,M,S,M,S,no
+Kiara,Perico,515 N Garfield Ave,,Pasadena,CA,91101,Kiaraana@gmail.com,,S,S,S,S,no
+Megan,McDonald,3020 Franklin Corner Lane,,Oak Hill,VA,20171,megan.mcdonald17@yahoo.com,,XS,XS,XS,XS,no
+Rae  ,Kanoa,904 Silver Spur Road  ,#333,Rolling Hills Estates   ,CA,90274,rae.kanoa@gmail.com,,S,XS,S,XS,no
+Madison,Ryan,3609 Old Orchard Drive ,,Ashland ,KY,41102,Makeupbymaddyryan@gmail.com,,M,M,M,M,no
+Taylor,Keffer,321 S Sunrise Way,Apt. # P-4,Palm Springs,CA,92262,Tylorkeffer@gmail.com,,S,XS,XS,XS,no
+Melissa,Getlinger,10571 Martin St,,Coon Rapids,MN,55433,Blueeyeskye28@gmail.com ,,XL,XL,XL,XL,no
+Tehmeena ,Afzal ,259 McKinley Parkway   ,,Mineola  ,NY,11501,tehmeenaafzal@icloud.com,,XS,XS,XS,XS,no
+Shelby,St.clair,4064 W. 133rd St,,Hawthorne,CA,90250,shelbystclair1111@gmail.com,,L,M,S,M,no
+Giorgia,Balestri,8034 Bienville Dr  ,Apt E304,Nashville,TN,37211,gi.balestri@gmail.com,,M,S,S,S,no
+JaLisa,Vaughn,5500 Somerset Drive  ,#313,The Colony,TX,75056,jalisav@gmail.com,,S,S,L,S,no
+Emme  ,Strickland,4143 Via Marina  ,#117   ,Marina Del Rey  ,CA,90292,emme.strickland@yahoo.com,,S,S,S,S,no
+Kelsie,Taylor,491 S Freedom Blvd  ,#110,Provo,UT,84601,Kelsie.marie.tay@gmail.com,,S,XS,XS,XS,no
+Rebecca,Yaker,439 lakeview ave,,Winter park,FL,32789,Xxrlilly@gmail.com,,M,L,M,L,no
+Jerrieal,Lumar,575 NE LOOP 820,Apt 831,Hurst,TX,76053,jerrieal.lumar@gmail.com,,XL,XL,XL,XL,no
+Daniela,Novelo,8976 Montrose Way,,San Diego,CA,92122,dnovelo.ingz@gmail.com,,S,S,S,S,no
+Victoria ,Fox ,15 Hampshire dr ,,Greensburg ,PA,15601,Vfox260532gmail.com,,S,S,s,S,no
+Vanessa,Benefiel,15441 Wandering Way,,Noblesville  ,IN,46060,vanessabenefielscloset@gmail.com,,M,M,M,M,no
+Laura,Woo,668 Via Colinas,,Westlake Village,CA,91362,Pocahanto@aol.com,,S,XS,XS,XS,no
+Melissa ,Hanson,118 W. Escalones  ,Apt. C,San Clemente ,CA,92672,Hansonskitchen123@gmail.com,,M,XS,M,XS,no
+Gabby,Cirigliano,200 Water street,Apt 215,New York ,NY,10038,Thecurlycucumber@gmail.com,,XS,XS,XS,XS,no
+Amy,Murray,904 River View Lane,,Norwich,CT,06360,aloveblog926@gmail.com,,M,L,L,L,no
+Kacey,Garcia,17052 E Benwood St,,Covina,CA,91722,kacegarcia3@gmail.com,,L,M,S,M,no
+Maggie,Huang,427 Westminster Ave,Apt 107,Los Angeles,CA,90020,maggieeats@outlook.com,,M,S,M,S,no
+June,Ning,7320 Hawthorn Ave  ,#420,Los Angeles,CA,90046,missjunening@gmail.com,,M,S,S,S,no
+Macey,Lutz,8935 Singleleaf Circle,,Lorton,VA,22079,macey.lutz@gmail.com,,S,M,M,M,no
+Emili,Egan,838 Violet Drive  , ,Morgan  ,UT,84050,emilieganblog@gmail.com,,M,M,M,M,no
+Kavita,Channe,1319 Seminole Drive,,Fort Lauderdale,FL,33304,kavitachanne1@gmail.com,,M,M,S,M,no
+Jennifer,Sattler,3 Deerfield East,,Quogue  ,NY,11959,effortlesseverydaystyle@gmail.com,,S,S,XS,S,no
+Janna,Bushman ,2552 oriole st,,Bowling Green,KY,42101,jannacookie@hotmail.com,,XS,XS,S,XS,no
+Jamie,Rinaldi,6419 n. navajo ave,,chicago,IL,60646,jamielynn1002@gmail.com,,M,S,s,S,no
+Tonya  ,Tardiff,42940 courtland chase sq,,Ashburn  ,VA,20148,TonyaMichelle26@hotmail.com,,M,S,S,S,no
+Bertha,Hidalgo,243 Cambo Drive,,Hoover,AL,35226,chicinacademia@gmail.com,,M,M,M,M,no
+Michelle,Robinson,3111 Millerton Way,,Thompsons Station,TN,37179,Michelle@moderndaymoguls.com,,XL,L,L,L,no
+Emily ,Hills,710 Driftwood Dr,,Eugene,OR,97402,Joyfulemilyhills@gmail.com,,M,M,M,M,no
+Bailey,Hawkins,9205 Abrams Drive ,,Knoxville  ,TN,37922,sequinsandseams@gmail.com,,S,S,XS,S,no
+Cathy,Ries,3637 Copperfield Drive,Apt 376,San Jose,CA,95136,cathy@ries.io,,XS,XS,XS,XS,no
+Lauren,Wilson,4365 McLaughlin Ave.,#16,Los Angeles ,CA,90066,lauren@tinysoapbox.la,,M,S,S,S,no
+Amanda,Gligorea,12714 se 253rd Ct,,Kent ,WA,98030,Amandama12@yahoo.com,,M,M,S,M,no
+Jasmine ,Jackson,4911 49th street ,,Sacramento   ,CA,95820,allthatjazzxx@yahoo.com,,S,S,S,S,no
+Ashley ,LaCombe,954 Winston Dr,,Monroe ,MI,48161,ashestofirefitness@gmail.com,,M,M,M,M,no
+Janelle,Macandile,421 N Heliotrope Dr,Apt 212,Los Angeles,CA,90004,itsjanellemac@gmail.com,,S,S,XS,S,no
+Brittany,Kovacs,2826 Sunbury Rd,,Columbus,OH,43219,brittkovacsfitness@gmail.com,,L,M,L,M,no
+Elizabeth ,Stanton,4401 Wilshire Blvd ,,Los Angeles,CA,90010,Lizzymstanton@gmail.com,,L,M,S,M,no
+Kelley,Bouchard ,44 Rose Hill Drive ,,Savannah ,GA,31419,kelleybouchard@gmail.com,,S,S,S,S,no
+Monica  ,Case,21 Tracy Drive ,,Manalapan ,NJ,07726,casegirl@me.com,,M,M,M,M,no
+Lauren  ,Cheely,1414 n first st,,Morgan city ,LA,70380,southernmommasreviews@gmail.com,,S,S,S,S,no
+Jenna,Epperly,1840 Mable Lane,,Virginia Beach,VA,23454,jenna.abraham4@gmail.com,703-328-8067,S,S,S,S,no
+Erin,Faircloth,610 Kryptonite Drive,,Castle Rock,CO,80108,erin.faircloth@gmail.com,,M,L,L,L,no
+Krystel,Knowles,12637 Gorda Cir E,,Largo  ,FL,33773,krystelknowles@gmail.com,,M,S,M,S,no
+Grace,Olveda,5314 Cerro Vista,,San Antonio,TX,78233,graceolveda@gmail.com,,S,S,S,S,no
+Catherine  ,Canizalez  ,42 Caddy Circle,,Henderson  ,NV,89074,gypsyadventuress@gmail.com,,S,S,XS,S,no
+Chaniel,Nelson,20230 118th street SE,,Snohomish,WA,98290,chaniel_nelson@hotmail.com,,M,M,M,M,no
+Taylor,Stewart,26417 thackery lane,,Stevenson Ranch,CA,91381,taylorstewart2013@yahoo.com,,M,M,M,M,no
+Kristine ,Strange,78 Lasalle Ave,,Wabash,IN,46992,ilostbigandsocanyou@gmail.com,,S,S,S,S,no
+Dana  ,Mordov,12 East 80th Street   ,,New York  ,NY,10075,activedodo@gmail.com,,S,S,S,M,no
+Kristen,Mackoul,898 Glendale Ln,,Orange Park,FL,32065,kris10sunshine@gmail.com,,S,S,S,S,no
+Liz,Mbwambo,250 Palm Park Circle,Apt 202,Longwood,FL,32779,lizmbw@hotmail.com,,XL,L,L,XL,no
+Claudia,Innocenzi,7501 east treasure drive apt 2E,,North bay village ,FL,33141,claudiainnocenzi@gmail.com,,M,S,S,S,no
+Turkesha,McIvy,100 Edmondson Way,,Fayetteville,GA,30214,Turkesha@naturalbabydol.com,,M,M,M,M,no
+katie,summers,2425 Bramasole Drive ,,Richlan,WA,99354,loseitconkatie@outlook.com,,M,S,S,S,no
+Elizabeth,Bryan,2215 Middlesex Dr,,Toledo,OH,43606,lizlaughlunge@gmail.com,,M,S,M,S,no
+Dorothy,Feliciano,204 Virginia Ave Suite 2 ,,Petersburg,WV,26847,lifeinthemedlane@gmail.com,,S,S,S,S,no
+Jenny,Khalema,"1144 N 198th Street, E102",,Shoreline,WA,98133,jennykhalemapursuit@gmail.com,,S,S,M,S,no
+Lindsay,O'Kelly,1553 Glenn Street,,Hayward,CA,94545,dueskerdoo@msn.com,,L,L,M,L,no
+Ashley,Sharp,604 West Spruce St.,,Haskell,OK,74436,as.sharp8@gmail.com,,L,L,L,L,no
+Johanna,Cabanillas,205 Hale Ave,,White Plains,NY,10605,johannacfit@gmail.com,,M,M,S,S,no
+Kathryn,Gambill,834 Hunter Dr,,Mooresville,NC,28115,akgambill@gmail.com,,S,S,M,S,no
+Hailey,Bettencourt,1121 n 44th street,Apartment #1068,Phoenix,AZ,85008,haileybettencourtfitness@gmail.com,,S,S,S,S,no
+Emilia,Usry,10311 Otter Cr,,Baytown,TX,77523,emiliaquinnstyle@gmail.com,,M,S,S,S,no
+Rachel,Autumn Brown,11950 Kling st,Apt 215,Valley Village,CA,91607,rachelautumnb@gmail.com,,M,M,M,M,no
+Christina,Davis,8 Kenmore Ct,,Orinda,CA,94563,christina@classtige.com,,S,XS,XS,XS,no
+Jennifer,DeMatteo,9474 Swan Lake Drive ,,Granite Bay ,CA,95746,savvygreystyles@yahoo.com,,M,M,M,M,no
+Jenn,Richardson ,147 Lanternback island drive ,,Satellite beach ,FL,32937,jenn@irichardson.net,,M,S,S,M,no
+Sarep,Baggott,229 Wadsworth Dr. ,,Mankato,MN,56001,ssdoeung21@gmail.com,,S,XS,S,XS,no
+Arnie,Gilles,3288 CPL JOHNSON RD UNIT 3412,,San Antonio,TX,78234,thatdorkarnie@gmail.com,,M,L,M,L,no
+Caitlin,Gieseking,1685 E 765 S ,,Wolcottville,IN,46795,caitlingieseking@gmail.com,,M,S,S,S,no
+Ellyn,Ferriter,440 NE Bowman Drive,,Waukee,IA,50263,infitinhealth@gmail.com,,S,S,S,M,no
+Samantha,Gervias,5465 Peartree Dr,,Burton,MI,48519,samanne.fit@gmail.com,,M,S,M,M,no
+Madison,Pope,210 Lynn Avenue,,Satellite beach ,FL,32937,madisonpope25@yahoo.com,,S,S,S,XS,no
+Kristi,Brewer,5400 S. Wayland Ave,,Meridian,ID,83642,k.brewer208@gmail.com,,M,S,S,S,no
+Hillary,Chang,7845 Westside Drive apt 124,,San Diego ,CA,92108,eatingtodaywithtaiwanbae@gmail.com,,S,S,S,M,no
+MaryAnn,Chavez,11023 McCormick st #513,,North Hollywood,CA,91601,maryannkc95@gmail.com,,S,S,XS,S,no
+Kristen,LeCoumpte,4180 NW 113th AVE ,,Sunrise ,FL,33323,balancingpieces@gmail.com,,L,L,M,XL,no
+Samantha,McRoberts,3644 Keystone Ave Apt 4,,Los Angeles,CA,90034,thewanderlustsam@gmail.com,,L,M,S,M,no
+Victoria,Vaden,8362 Moccasin Trail Drive,,Riverview,FL,33578,victoriaking2@icloud.com,,L,M,S,S,no
+Caitlin,Wilker,1717 Rifle Ridge SW ,,Marietta ,GA,30064,caitscozycorner@gmail.com,,S,S,S,S,no
+Erin,Murray,1000 W Adams st ,Unit 704,Chicago,IL,60607,erinmurray9@gmail.com,,S,S,S,S,no
+Danika,Vielma,8348 Erickson Blvd Apt 10-204,,Littleton,CO,80129,absinaltitude@hotmail.com,,S,XS,XS,XS,no
+Kerri,Booker,13 Lexi Dr,,Danville,PA,17821,girlwithalatte@yahoo.com,,S,XS,S,XS,no
+Roxanne,Lecrivain Wicks,1776 el cerrito place,apt 3,los angeles,CA,90028,roxanne.lecrivain@yahoo.com,,S,S,S,S,no
+Chelsea,Sule,11640 Gorham Ave ,#8,Los Angeles,CA,90049,chelsea.sule@gmail.com,,M,S,S,S,no
+Aranya,Breaw,11006 Wurdermanns Way,,Orlando,FL,32825,thefbloggers@gmail.com,,S,XS,M,S,no
+Shanice,McKenzie,11000 Weyburn Ave,Apt 681,Los Angeles,CA,90024,purelypositivitea@gmail.com,,S,S,M,M,no
+Kloudya,Molina,73 Wilson ave,,Wayne,NJ,07470,kloudyamolina@gmail.com,,XS,XS,XS,S,no
+Elena,Marroquin,"8339 Delcrest Dr, 2C",,St. Louis,MO,63124,cheetahtalkymas@gmail.com,,XS,XS,XS,XS,no
+Kayla,Smith,650 N 500 W,#205,Provo,UT,84601,kaylajfsmith@gmail.com,,L,M,L,M,no
+Natalie ,Hovee,"6255 W. Sunset Blvd, Suite 1450 ",,Los Angeles ,CA,90028,natalie.hovee@stylehaul.com,,S,M,S,M,no
+Alison Michelle,Ambukadze,8 McCullough Dr.,U120942,New Castle,DE,19726,alisontaranova@gmail.com,,S,S,S,XS,no
+Angela,Darnell,3889 N Steele Blvd,Apt 305,Fayetteville,AR,72703,angela@thethriftypineapple.com,,S,S,S,S,no
+Lauren,Walshe,80 Varick St,Apt 3C,New York,NY,10013,laurenwalshe@hotmail.com,,XS,XS,S,S,no
+Mireille,Sine,234 S Occidental Blvd #12,,Los Angeles,CA,90057,mireille.sine@gmail.com,,L,M,M,M,no
+Taylor,Staus,540 N State Street,Apt 2310,Chicago,IL,60654,taylorj143@yahoo.com,,M,M,M,M,no
+Daniela ,Perez,10280 nw 63 terrace apt 203,,Doral,FL,33178,hello@daniknows.com,,L,L,L,L,no
+Hallie,Friedman,44 West 67th Street,Apt 23C,New York,NY,10023,hallie.melissa@gmail.com,,S,XS,S,XS,no
+Shannon,Kirchhoff,286 North Country Road,,Wading River,NY,11792,thesequinhanger@mail.com,,XL,XL,M,M,no
+Jessica,Anderson,21535 Roscoe Blvd #111,,Canoga Park,CA,91304,jessmarie243@gmail.com,,S,XS,XS,XS,no
+Kristen,Downard,610 Green St.,,Blacksburg,VA,24060,kristend@vt.edu,,M,S,S,S,no
+Stephanie,Duran,4106 Costero Risco,,San Clemente,CA,92673,contactstephduran@yahoo.com,,L,M,M,L,no
+Avani,Chokshi,8037 Spring Peaks Dr,Plano TX 75025,Plano,TX,75025,Fashionbeautydecor15@gmail.com,,M,M,M,L,no
+Lauren,Lee,"1201 Flower Street, #367C",,Glendale,CA,91201,lauren.akemi.lee@gmail.com,,M,M,M,M,no
+Kiara ,Jaquez,229 route 202 suite 100,,Pomona,NY,10970,kiarajaquez@hotmail.com,,S,S,S,S,no
+Kimberly,Johns,4507 Vinings Central Trce SE,,Atlanta,GA,30339,info@beatsbykd.com,,XL,XL,XL,XL,no
+Melissa,Tucker,2540 Lapeer Road ,,Port Huron ,MI,48060,mtucks20@me.com,,S,S,S,S,no
+Olivia,Balliet,129 Chandeleur Drive,,Mooresville,NC,28117,oliviaballiet@gmail.com,,S,S,S,M,no
+Janet,Harris,"2303 Bottega Ln Apt 301, mailbox 273",,Brandon,FL,33511-1253,getfitbyjanet@gmail.com,,M,S,M,M,no
+Jorji,Gardiner,25 Union Square West,#C2-8CB,New York,NY,10003,jorjigardiner@gmail.com,,M,M,M,L,no
+Onyi,Azih,1318 Pecan Station,,San Antonio,TX,78528,sincerelyonyi@gmail.com,,M,M,M,M,no
+Lauren,Workman,5740 Wolf Road,,Western Springs,IL,60558,lvwbball@aol.com,,S,S,S,S,no
+Kelsey,Birtch,2390 Peace Portal Dr,Unit 5631,Blaine,WA,98230,kelseybirtch1@gmail.com,,L,M,M,L,no
+Jasmine ,Sweet ,323 Seven Springs Way ,,Brentwood,TN,37027,jsweet@memphisalumni.org,,M,M,M,M,no
+Sutton ,Smith,8700 Stacy rd #5204,,McKinney ,TX,75070,akylathehusky@gmail.com,,M,S,S,M,no
+Danielle,Waltman,5300 Patron Place,,Summerville  ,SC,29485,daniellewaltmanfitness@gmail.com,,S,S,S,S,no
+Jessica,Amendola,530 Lindsey Ln,,St Augustine,FL,32086,yogajessamendola@gmail.com,,M,S,S,S,no
+Jill,Short,391 Lakeview Dr,,Colonial Beach,VA,22443,yogako154@gmail.com,,L,M,M,M,no
+Hailey,Pham,7909 Collins Isle Lane,,Sacramento,CA,95831,info@haileypham.com,,M,S,S,S,no
+Lesly ,Damai,6346 San Martin Way ,,Buena Park ,CA,90620,hello@leslydamai.yoga,,M,S,S,M,no
+Lauren ,Zanetti,1007 Highland Way ,,Rock Springs,WY,82901,laurzanetti@gmail.com,,S,S,S,S,no
+Sara,Krug,6624 W16th st,,Saint Louis Park ,MN,55426,saramandel@hotmail.com,,XS,XS,XS,XS,no
+Angel,Keppler,112 paige street,,Owego,NY,13827,angelkeppler@gmail.com,,S,S,S,S,no
+Lynzi,Irvine,444 East 16th Street,,Costa Mesa,CA,92627,yogalynzi@gmail.com,,S,S,XS,S,no
+Allison,Schieler,"35 Clinton Place, apt 5F",,New Rochelle,NY,10801,schieler.allison@gmail.com,,M,M,M,M,no
+Emily,Chen,201 E 17th St,Apartment 10h,New York,NY,10003,chen.emilyk@gmail.com,,XS,XS,XS,XS,no
+Demi,Bang,7135 E Camelback Road ,Ste 360,Scottsdale,AZ,85251,info@demibang.co,,XS,XS,XS,XS,no
+Caelynn,Miller-Keyes,15 Woodstone Dr,Apt 27,Weaverville,NC,28787,caelynn.miller.keyes@gmail.com,,S,XS,XS,S,no
+Danielle,Radulski,352 Ward Ave Fl 3,,Mamaroneck,NY,10543,coachdanielleradulski@gmail.com,,S,S,S,M,no
+Mercede ,Sweet,3745 Cemetery Road,,Platteville ,WI,53818,pet.featurez@gmail.com,,S,L,L,L,no
+Melissa,Brooks,33 S. Hill Ave B110-2-C,,Fayetteville,AR,72701,melissabrooks1435@gmail.com,,S,M,S,L,no
+Olivia,Thorn,536 Fouse Ave ,,Akron,OH,44310,buddude0710@gmail.com,,S,S,S,S,no
+Haley,McInnis,14822 HWY 27,,Enterprise ,AL,36330,haleyrose.mcinnis@gmail.com,,S,S,S,S,no
+Olivia,Pateas,1931 Cove Colony Rd,,Maitland,FL,32751,Oliviapateas@yahoo.com,,S,S,S,S,no
+Ana,Matei,98 Gerry rd,,Brookline,MA,02467,anastarzsok@gmail.com,,XS,XS,XS,XS,no
+Loreana ,von Plocki,2101 SW 67th Avenue ,Apt. 415,Miami,FL,33155,contact@thedailybella.com,,S,M,S,M,no
+Kelly,Ulloa,909 W Grove Parkway APT. 1044,,Tempe,AZ,85283,kellznavez@gmail.com,,S,S,S,S,no
+Avery,Woods,155 East Frye Road,#333,Chandler,AZ,85225,averyewoods@gmail.com,,S,S,S,S,no
+Priscilla,Lam,21192 white horse lane,,Huntington Beach,CA,92646,priskillaa_@outlook.com,,S,XS,XS,XS,no
+Kristin,Taylor,1553 E Brockton Ave. ,,Redlands ,CA,92374,kristin@dressedfortime.com,,L,XL,XL,XL,no
+amira,omar,212 anacapa ,,irvine,CA,92602,falloverfashion@gmail.com,,S,M,M,M,no
+Erin,Edwards,3700 S Plaza Dr,Apt F202,Santa Ana,CA,92704,erin.e.edwards10@gmail.com,,XL,XL,XL,XL,no
+Gaby,Monterrey,736 Contessa,,Irvine ,CA,92620,gabymonterrey@me.com,,S,S,S,S,no
+Felicia,Sarisuk,212 Oswego Ave ,Apt 4,Huntington Beach ,CA,92648,prettypoorthing@gmail.com,,L,M,L,M,no
+Blair,VanSchuyver,5206 Norwich Ave Apt 106,,Sherman Oaks,CA,91411,justbeingblair@gmail.com,,M,M,M,M,no
+Summer,Buchanan,1507 Ridgemont Ct,,Fullerton,CA,92831,summer.lebuchanan@gmail.com,,S,XS,XS,XS,no
+Alejandra,Gomez,5061 Via Brenda,,La Palma,CA,90623,atthealee@gmail.com,,M,M,M,M,no
+Alison,Barker,27 Chianti,,Ladera Ranch,CA,92694,alison@allthingsalison.com,,S,S,XS,M,no
+Danielle,Reyes,3349 East Alderly Lane,,Orange,CA,92867,daniellealanaxo@gmail.com,,S,S,S,M,no
+Amber,Henahan ,31971 Joshua Drive ,,Trabuco Canyon,CA,92679,ambernicolefashion@gmail.com,,M,S,S,S,no
+Marshel,Ng,17304 Mirasol,,Irvine,CA,92620,betweenyounmeblog@gmail.com,,L,L,XL,L,no
+Kristina ,Coelho,1418 S Central Park Ave,,Anaheim,CA,92802,laughloveandhippie@gmail.com,,S,S,M,M,no
+Alexis,Amato,18088 Almendro Ln ,,San Diego,CA,92127,fullofsips@gmail.com,,L,M,M,M,no
+Dannaed,Pineda,3300 E Palm Dr Apt 344 ,,Fullerton,CA,92831,contactdannaed@gmail.com,,S,S,M,M,no
+Karen,Lizarraras,15801 High Knoll Dr.,118,Chino Hills,CA,91709,mammabearsays@gmail.com,,M,M,M,M,no
+Ashley,Borras,636 Red Sage ,,Irvine,CA,92618,fashannliz@gmail.com,,L,L,L,L,no
+Hanssie,Ho,21306 Beach Blvd,Apt 205,Huntington Beach,CA,92648,Hanssie@sbcglobal.net,,S,S,S,S,no
+Shelby,Soileau,2700 Peterson Pl 68B,,Costa Mesa ,CA,92626,shelbysoileau@yahoo.com,,S,S,S,S,no
+Stephanie,Sandoval,939 W 19th St D1,,Costa Mesa,CA,92627,stephanielouise585@gmail.com,,M,S,S,S,no
+Tamara,Trainer,638 Red Sage ,,Irvine ,CA,92618,somethinginspiredblog@gmail.com,,S,S,S,S,no
+Jessica,Karelas,6 Pond Street,,Ayer,MA,01432,jessica.karelas@gmail.com,,S,S,S,S,no 
+Kelly,Price,175 N. Harbor Drive  ,Apt. 4307,Chicago ,IL,60601,unapologeticallykelly@gmail.com,,M,S,M,S,no 
+Kumiko,Nixon,2120 Burnside Dr,,Sparks ,NV,89434,kristinapnixon@gmail.com,,XL,XL,XL,XL,no
+Brandi,Oberempt,167 Wepawaug Dr ,,Milford ,CT,06461,uniquelybusymom@gmail.com,,XS,XS,XS,XS,yes
+Genevieve,Carlson,14109 N 109th St,,Scottsdale,AZ,85255,genevievecballet@gmail.com,425-786-5417,S,S,S,S,yes
+Susan,Dangerfield,29375 N 68th Ln,,Peoria,AZ,85383,susandangerfield@gmail.com,480-353-0975,XS,XS,XS,XS,yes
+Michelle,Leger,5225 Blakeslee Ave,apt 325,North Hollywood,CA,91601,wanderlustcurls@gmail.com,,M,S,M,S,yes
+Danella,Urbay,8075 sw 206 terrace ,,Miami ,FL,33189,Danellaurbay@aol.com,,XL,L,L,L,yes
+Natalie,Joly,30 Park Avenue,,Wakefield,MA,01880,nataliejolymusic@gmail.com,,S,S,S,S,yes
+Melina,Tesi,12190 SE 282nd Ave,,Boring  ,OR,97009,melinatesi@gmail.com,,M,XS,S,XS,yes
+Gina,Yablow,451 Pesaro St.,,Oak Park,CA,91377,gyablow@gmail.com,,S,S,S,S,yes
+Julia,Burke,200 W Lake St,,Barrington,IL,60010,juliabrk@gmail.com,,S,S,S,S,yes
+Giselle,Falla,1353 Danielle Ct.,,Chesapeake,VA,23320,gellykat@gmail.com,,M,S,XS,S,yes
+Jen,Delaporte,1360 Saddlebrook Court,,Bartonville,TX,76226,bbg.strong11@gmail.com,,M,M,S,M,yes
+Kim,Hieber,1507 Wrightstown Road,,Newtown    ,PA,18940,kimfit56@gmail.com,,S,S,S,S,yes
+Ana,Florencia Rego,9499 Collins Avenue  ,suite 909,Miami  ,FL,33154,anaflorentyna@outlook.com,,M,XS,XS,XS,yes
+Sarah ,Spurr ,260 W 26th Street,Apartment 8G ,NY,NY,10001,mystyleseries@gmail.com,,S ,S ,XS ,S ,yes
+Christine,Connell,2001 15th Street North,Apt 421,Arlington,VA,22201,hello@christinexploring.com,,M,M,M,M,yes
+Casey,Quinones,1508 Bay Rd,Apt 1009,Miami,FL,33139,mirandaraevega@yahoo.com,,M,M,M,M,yes
+Abigail,Thomas,USC Student Box 85723,1400 Greene Street,Columbia,SC,29225,abigail@livingthegraylife.com,,S,XS,S,XS,yes
+Melanie,Nunez,"
+1207 sw squire johns lane",,Palm City,FL,34990,melaniekatenunez@gmail.com,,S,S,S,S,yes
+Elizabeth,Scott,717 Riverside Drive,#508,Memphis,TN,38103,lifestyleinfocusblog@gmail.com,,M,S,s,S,yes
+Luna,Hira-Khan,2801 s king drive apt 1206,,Chicago,IL,60616,Anthemofstyle@gmail.com,,S,XS,S,XS,yes
+Kendall,Clifton,3281 East Forest Lake Road,,Acampo,CA,95220,Harlee.theaussie@yahoo.com,,M,S,S,S,yes
+Maranda  ,Flamm  ,475 Balconade Drive ,,Pittsburgh  ,PA,15236,marandaflamm@gmail.com,,L,L,XL,L,yes
+Stephanie  ,Stallings  ,1256 Madison St.,,Denver ,CO,80260,ststallings@me.com,,S,M,M,M,yes
+Christine,Connor,2509 Cove Rd,,Las Vegas,NV,89128,Christinemarieconnor@gmail.com,,S,S,S,S,yes
+Jeanne,Coppola,PO BOX 1412,,Tuscaloosa ,AL,35403,coppola.jeanne@gmail.com,,S,XS,S,XS,yes
+Marissa ,Pellis,512 Oxford Drive ,,Greensburg,PA,15601,marissapellis@gmail.com,,M,M,M,M,yes
+Lorien ,Orpelli  ,4109 via marina , R-117 ,Marina Del Rey,CA,90292,lorpelli@hawaii.edu,,M,S,S,S,yes
+Tatiana ,Romo,4500 steiner ranch blvd,Apt 2007,Austin,TX,78732,Romotatiana@Yahoo.com ,,L,M,L,M,yes
+Daniella  ,Duque  ,18061 SW 33rd St,,Miramar ,FL,33029,danielladuqued3@outlook.es,,S,S,S,S,yes
+haivyn,sanchez,501 W Olympic Blvd,Apt 919,Los Angeles,CA,90015,haivynsanchez@yahoo.com,,M,L,M,L,yes
+Deb , Dutta  ,3587 Flint Creek Dr,,San Jose ,CA,95148,deesignplay@gmail.com,,S,S,S,S,yes
+Melissa,Paloucek,3202 Elm Ave,,Brookfield,IL,60513-1308,flourishingmel@gmail.com,,S,XS,XS,XS,yes
+Nancy,Sevilla,1231 N Las Palmas  ,APT103,Los Angeles,CA,90038,Fancynancista@gmail.com,,S,S,S,S,yes
+Whit,Gardner,4694 North Maplestone Ave,,Meridian,ID,83646,hiitwhitbbg@outlook.com,,S,S,S,S,yes
+Delyanne,Barros,4325 hunter street,Apt 1134e,Long Island city,NY,11101,Thestrongerpear@gmail.com,,XS,XS,S,XS,yes
+Paige,Fuson,10558 Big Mill Court,,Las Vegas   ,NV,89135,kp.fuson@gmail.com,,S,XS,XS,XS,yes
+Chelsi,Lovos,7733 Hess Place  ,Unit 2,Rancho Cucamonga ,CA,91739,Chelsi.lovos@yahoo.com,,M,M,M,M,yes
+Savannah,Harris,2200 Kingsbridge Lane,,Oxnard ,CA,93035,sjshiles@yahoo.com,,M,S,S,S,yes
+Erica,Voyles,1204 Summit pointe way ne ,,Atlanta ,GA,30329,Evoyles@bellsouth.net,,M,S,M,S,yes
+Shannan,Panganiban,5821 Carriage Drive ,,Sarasota ,FL,34243,shannan@faithfullybeautiful.com,,M,M,M,M,yes
+Marisol ,Avila,827 E. Aire Libre Ave,,Phoenix,AZ,85022,alltheprettys@gmail.com,,S,S,M,S,yes
+Lisette,John,1511 Westminister dr ,#110,Naperville ,IL,60563,Lisettejyoga@gmail.com,,XS,S,S,S,yes
+Alex,Falco,6563 N. Dapple Gray Rd,,Las Vegas ,NV,89149,alexxx_j12@yahoo.com,,M,M,M,M,yes
+Caitlin,Edmund,1512 E. Santiago Lane ,Apt. #HN-32,Cottonwood Heights,UT,84121,Caitlin.edmund@gmail.com,,XL,XL,XL,XL,yes
+Danica,Mendez,57 Sherwood drive,,Huntington,NY,11743,certainlysomething@aol.com,,XL,XL,XL,XL,yes
+Sarabeth,Panela,4009 Del Favero dr,,Antioch,CA,94509,Sarabethp21@gmail.com,,S,S,S,S,yes
+Erica,Broderick,21021 N 56th St,Apt 2036,Phoenix,AZ,85054,etheyogi@icloud.com,480-747-4403,S,S,S,S,yes
+Jessica,Maurine,"
+19915 Avenue of the Oaks",,Newhall,CA,91321,jessica@petitestylescript.com,,S,XS,XS,XS,yes
+Rocio,Ocampo,4734 Almidor Ave.,,Woodland Hills,CA,91364,info@momdutyla.com,805.469.8082,M,M,S,M,yes
+Carmen,Pravia,256 Chestnut Ave.,,North Plainfield,NJ,07063,livelovebeautyy1@gmail.com,,S,S,S,S,yes
+Eugenia  ,Lung,9517 W Cluster Ave,,Tampa  ,FL,33615,geniabeme@gmail.com,,S,XS,XS,XS,yes
+Justeen ,Smith,1725 Main st  ,unit 1701,Houston,TX,77002,Justeenkansuwan@gmail.com,,XS,XS,XS,XS,yes
+Nick  ,Simonchyk,8045 Limberlost Rd   ,,Clinton  ,NY,13323,grabovska87@ukr.net,,M,M,M,M,yes
+Kelly  ,Prepster  ,9484 Country Trail, ,Loveland  ,OH,45140,kellyprepster@gmail.com,,M,M,M,M,yes
+Lex ,Nai,8500 Pershing Drive,#308,Playa Del Rey,CA,90293,booklexznai@gmail.com,,M,S,S,S,yes
+Dara,Buggay,605 W Main Street,Apt 211,Durham,NC,27701,mind.over.body77@gmail.com,,S,XS,XS,XS,yes
+Michelle,Sun,27662 Pinestrap Circle,,Laguna Hills,CA,92653,missmisschelle@gmail.com,,L,M,M,M,yes
+Emmanuelle  ,Berne,10128 NW 51st Terrace  ,,Doral ,FL,33178,emmanuelleberne.eb@gmail.com,,XS,XS,XS,XS,yes
+Marlena  ,Wood,5941 South Loop East,Unit #302,Houston ,TX,77033,hello@meetmadeleine.com,,L,M,M,M,yes
+Caitlyn  ,Hope  ,156 Old Orchard Rd.,,Toms River  ,NJ,08755,shanti_love10@yahoo.com,,S,XS,S,XS,yes
+Angelica ,Pinto,26 Ebey Ln, ,Staten Island  ,NY,10312,x06angel30x@gmail.com,,S,S,S,S,yes
+Samantha,Neyland,12421 Riverside Dr.  ,Apt 2,Valley Village,CA,91607,samantha.neyland@gmail.com,,S,S,S,S,yes
+Gloria,Gomez,8056 NW 66th ST. ,,Miami,FL,33195,gloriastephanie_27@hotmail.es,,S,XS,M,XS,yes
+Lisa  ,Burnstein ,11 Copious Lane ,,Ladera Ranch  ,CA,92694,thislifestyled@gmail.com,,M,S,S,S,yes
+Chelsea,Wagner,7845 Westside Dr.,Apt #130,San Diego,CA,92108,chelseawagner.fitness@yahoo.com,574-309-8229,S,XS,XS,XS,yes
+Emma,Atkins,1724 Highland Ave ,Apt 408,Los Angeles,CA,90028,Elatkins8@gmail.com,,S,S,S,S,yes
+Caroll,Salazar,651 W E ST.,,Colton  ,CA,92324,makeuphuney@yahoo.com,,M,S,M,S,yes
+Natalie,Merola,5400 W Parmer LN  ,Apt 331,Austin,TX,78727,Kitty@gingermeglam.com,,L,L,L,L,yes
+Aiesha,Beasley,8412 E. Medford Pl.,,Tucson,AZ,85710,aieshab21@gmail.com,,M,S,S,S,yes
+Brianna,Armour,98 Old Bergen Road ,2,Jersey City,NJ,07305,saggoddessig@gmail.com,,M,M,M,M,yes
+Tiana,Ward,3646 Kalsman drive  ,Unit #2,Los Angeles ,CA,90016,tiana.ward@gmail.com,,XL,M,M,M,yes
+Anna,Mischio,5242 Radford Avenue,,Valley Village,CA,91607,anna.mischio@gmail.com,,XS,XS,XS,XS,yes
+Lauren,Taus,13078 Mindanao Way   ,Unit 113,Marina Del Rey  ,CA,90292,laurentaus@gmail.com ,,XS,XS,XS,XS,yes
+Athena,Sotiropoulos ,Po box 53002,,Irvine,CA,92619,divaonadimepr@gmail.com,,M,M,S,M,yes
+Jennifer,Morales,2551 S Main St ,,Mount airy ,NC,27030,littleveganjenni@gmail.com,,S,XS,XS,XS,yes
+Lacey,Douthat,1670 Boardwalk Cir,,Morristown,TN,37814,hello@theglittergospelblog.com,,M,S,M,S,yes
+Aileen,Luib,15819 Alisa Viejo Court,,Moreno Valley    ,CA,92555,contact@theballeronabudget.com,,M,M,M,M,yes
+Maria,Escobar,2801 alton pkwy ,Apt 341,Irvine,CA,92606,Mariapaulinaescobar@yahoo.com,,S,S,S,S,yes
+Jackie,Oppenlander ,600 pioneer road apt 411,,Rexburg ,ID,83440,jackieoppenlander@gmail.com,,M,M,M,M,yes
+Sarah,Caton,1069 Two Mile Rd,Apt C,Winchester,KY,40391,lessonswepaidforbook@gmail.com,,S,S,S,S,yes
+Carissa,Rea,30-22 31st Street,Apartment 1R,Astoria,NY,11102,urbanmilenyc@gmail.com,,S,S,S,S,yes
+Alexis  ,Michaud  ,5300 sw 63rd ave ,,Miami ,FL,33155,iamalexismichaud@gmail.com,,XS,XS,XS,XS,yes
+Aubrey,Howe,14333 Nieman Rd,,Overland Park,KS,66221,kalekouture@outlook.com,,L,L,M,L,yes
+Claudia,Camargo,1369 Spruce Pl,Apt 3204,Minneapolis  ,MN,55403,milesandsmiles.info@gmail.com,,S,S,XS,S,yes
+Sasha,Badillo,26 W 17th St,Suite 302,New York,NY,10011-5710,Info@makeupbysashamarie.com,,M,S,M,S,yes
+Elena,Serebryannaya,943 n orange grove ave  ,apt 1,West Hollywood ,CA,90046,e.serebryannaya@gmail.com,,S,XS,XS,XS,yes
+Addie,Rock,903 W 10th St  ,,Georgetown  ,TX,78636,awrytbusiness@aol.com,,M,L,M,L,yes
+Lexi,Holden,253 E. Delaware Place, Apt 13A,Chicago ,IL,60611,lexi.v.holden@gmail.com,,S,S,S,S,yes
+Lily  ,Rubio  ,17833 NW 15th St. ,,Pembroke Pines  ,FL,33029,lilyrubiofitness@gmail.com,,M,S,S,S,yes
+Jackie,Saland,824 Howard st.,,Wheaton,IL,60187,Jackiesaland@Gmail.com,,M,M,M,M,yes
+Ana ,Alarcón ,12 Gardner St. ,,Chelsea ,MA,02150,anagoesfit@gmail.com,,S,S,S,S,yes
+Carla,Martinez,8800 Woodland Ave,,Kansas City ,MO,64131,carlaamartinez3@gmail.com,,S,S,S,S,yes
+Dara,Minkin,11701 Indian School Rd. NE,,Albuquerque,NM,87112,elminke@gmail.com,505-577-2364,S,S,S,S,yes
+Grace,Minnes,1189 Beall Ave,Box no. 2231,Wooster,OH,44691,grliyan@gmail.com,,XS,XS,XS,XS,yes
+Solmayra,Reyes,3266 Watermarke Pl,,Irvine,CA,92612,reyessolmayra@gmail.com,,M,XS,S,XS,yes
+Tyler  ,Hopkins,2126 Lapeer Ave.,,Port Huron  ,MI,48060,mercedesb.fitness@gmail.com,519-381-1288 ,M,M,M,M,yes
+Melissa  ,Parada,3950 E Tremaine Ave   ,,Gilbert  ,AZ,85234,prettyinpink100@gmail.com,,L,L,XL,L,yes
+Minnelle ,Kouka,1906 Simplicity ,,Irvine  ,CA,92620,minnellek@gmail.com,,XL,M,M,M,yes
+Gabriela,Vasquez,1350 Harvey Mitchell Parkway,apt 114,College Station,TX,77840,gabbiecvblog@gmail.com,,S,S,S,S,yes
+Alinna    ,Pinighin,6501 W Addison st ,Apt. 1s,Chicago  ,IL,60635,alinnamodel@gmail.com,,S,S,S,S,yes
+Minjoo,Kim,2042 E Maple Ave ,,El Segundo   ,CA,90245,foodwithseoul@gmail.com,,M,M,S,M,yes
+Alyssa  ,Quilala ,5008 Tesoro Way,,El Dorado Hills  ,CA,95762,alyssaquilala@gmail.com,,M,S,S,S,yes
+Angela,Cela,306 N Robertson Blvd,,West Hollywood,CA,90048,angela.m.cela@gmail.com,,S,S,S,S,yes
+Sydney,Hale,1313 Center St,#316,Bowling Green,KY,42101,sydneydiane@yahoo.com,,XS,XS,XS,XS,yes
+Annaclaire  ,Tadlock  ,6103A Louisiana Ave,,Nashville   ,TN,37209,annaclairetadlock@gmail.com,,S,S,S,S,yes
+Rayleen  ,Renee,9202 176th St E  ,#170 ,Puyallup    ,WA,98375,crazedrayray@gmail.com,,XS,XS,XS,XS,yes
+Thanh ,Nguyen ,1007 Terry Way, ,Carrollton ,TX,75006,syd.nguyen1@gmail.com, ,S,S,S,S,yes
+Chelsea ,Heath,4721 Kester Ave  ,#6,Sherman Oaks  ,CA,91403,chelseaheath@icloud.com,,S,S,S,S,yes
+Lindsay,El Awadi,20901 Crestmont Lane ,,Dearborn Heights ,MI,48127,thatpagirl.llc@gmail.com,,S,S,S,S,yes
+Maria,Mazuelos,11818 Whispering Tree Avenue,,Orlando,FL,32837,mariaperu25@gmail.com,,S,S,S,S,yes
+Kelli,Tennant,921 10th St.,106,Santa Monica,CA,90403-2928,kelli.tennant@gmail.com,,M,M,M,M,yes
+Naomi,Yepes,6415 Terra way ,,Citrus Heights ,CA,95610,naomiyepes@gmail.com,,L,M,M,M,yes
+Ashley ,Borras ,636 Red Sage ,,Irvine ,CA,92618,fashannliz@gmail.com,,L,L,L,L,yes
+Margarita ,Korniychuk ,3600 data drive apartment 186 ,,Rancho cordova ,CA,95670,ritamakhno@gmail.com,,S,S,XS,XS,yes
+Sandy,Tsou,1312 N Macneil Dr.,,Azusa,CA,91702,sandytsou25@hotmail.com,,S,S,S,S,yes
+melissa,molomo,10 corey ave,,blue point,NY,11715,mssaywhatsreal@gmail.com,,M,S,S,S,yes
+Ester,Zueva,24149 willowbrooke ct,,valencia,CA,91354,esterzueva@gmail.com,,M,S,S,S,yes
+Stephanie,Gebara,2013 River Reach Dr,Apt 274,Naples,FL,34104,stephgebara@gmail.com,,M,S,S,S,yes
+Jenae,Vierhus,3974 Via Lucero #13,,Santa Barbara,CA,93110,Jenaertsf@gmail.com,,S,S,S,S,yes
+Brittany,Sims,75 w 300 n ,,Clearfield,UT,84015,Brittanysims01@gmail.com,,XS,XS,XS,XS,yes
+Noor,Hak,16970 chandler rd apt 5204,,East Lansing ,MI,48823,noorhakfitness@gmail.com,,M,S,S,S,yes
+Pearl,Yon,1060 Terra nova ,Apartment 206b,Pacifica,CA,94044,stylesbypmy@gmail.com,,XS,S,S,XS,yes
+Kristi,Mason,10509 Riverside Dr,9,Toluca Lake,CA,91602,kristimason18@gmail.com,,S,S,S,S,yes
+Sonika,Surati,611 concord drive ,,Gallatin ,TN,37066,shsurati@gmail.com,,S,XS,XS,XS,yes
+Myisha,Quinn,980 Walther BLVD,apartment 2021,Lawrenceville,GA,30043,Myishaquinn@me.com,,M,M,M,M,yes
+Anna,Cicone,5230 Alhambra,,Los Angeles,CA,90032,anna.cicone@gmail.com,,S,S,M,S,yes
+Rupali,Patel,4161 Stone Hall Blvd,,Hermitage,TN,37076,Flikisses@gmail.com,,S,S,S,S,yes
+Gina,Danza,17 Sheridan Ave,,Ho Ho Kus,NJ,07423,ginanicoledanza@gmail.com,,M,M,M,M,yes
+Shailey,Collier,548 s 674 w ,,Centerville ,UT,84014,th.shaileylewis@yahoo.com,,M,S,S,M,yes
+Payton,Strickland,1728 Snapping Court,,Winder,GA,30680,paystrickland@gmail.com,,L,S,M,M,yes
+Jasika,Dias,"35000 Drakeshire lane, apt #202",,Farmington hills ,MI,48335,jasikadias@gmail.com,,M,XS,S,XS,yes
+Summer,Lewis,390 Campbell Rd.,,York,PA,17402,hello@beingsummerlewis.com,,M,M,M,M,yes
+Mikayla,Saur,1 Ashland Brooke Ct. ,,Olney,MD,20832,mikaylasaur@gmail.com,,M,S,S,S,yes
+Sarah,Kucharczuk,173 Gramercy Road,,Bala Cynwyd,PA,19004,lettuceandluggage@gmail.com,,L,M,M,M,yes
+Elena,Popzlateva,18525 Collins St. Apt. A5,,Tarzana ,CA,91356,epopzlateva@yahoo.com,,S,S,S,S,yes
+Claire,Coggins,2500 McKinney Ave apt 531,,Dallas,TX,75201,clairecogginsfit@gmail.com,,M,S,M,L,yes
+Hallie,Janos,1782 6th Street Unit 2,,Sarasota ,FL,34236,hallieparkerlmt@gmail.com,,S,S,S,S,yes
+Megan,Jones,3218 Holiday Dr,,Lansing,MI,48912,majay_95@yahoo.com,,M,S,S,M,yes
+brooke,rowley,1110 w kettleman lane ,suite 13,lodi,CA,95240,betheyogi@yahoo.com,,M,M,M,M,yes
+Elena,Kwon,63 Oakland Ave ,,Port Washington ,NY,11050,elenakwon@gmail.com,,XS,XS,XS,XS,yes
+Karen,Goodman,1005 west 77th st APT#301,,Hialeah,FL,33014,coachkaren07@gmail.com,,M,S,S,S,yes
+Kirsty,Tavolacci,1206 e. Arrow lake ct,,Fort mill,SC,29707,kirstytavolacci96@gmail.com,,XS,XS,XS,XS,yes
+Rebecca,Leigh,1129 Odenton Rd,,Odenton,MD,21113,beach4love@gmail.com,,S,S,S,M,yes
+Caitlyn,Dang,46 Racquet Club Drive,,San Rafael,CA,94901,kittypdang@gmail.com,,M,M,M,M,yes
+Jessie,Shapiro,12 Stoney Brook Way,,Morristown,NJ,07960,yoga.w.jessie@gmail.com,,S,S,S,S,yes
+Taylor,Shapiro,9197 SEWL 1720 University Ave,,Boulder,CO,80310,taylorshapiro@me.com,,M,M,M,M,yes
+Mara ,Cobb,248 S. 3 W. #3 ,,Rexbrug,ID,83440,maracobbfit@gmail.com,,S,S,S,S,yes
+Rafaela,Dizon,305 Cobblestone Drive,Unit 509 Apt 204 ,Wilmington ,NC,28405,rafaelaalyssa1@gmail.com,,S,S,S,S,yes
+Megan,Gilb,12276 77th Place N,,West Palm Beach,FL,33412,meganjaynee@yahoo.com,,S,S,XS,S,yes
+Shauna,Wood,90 Norfork Drive ,,Maumelle ,AR,72113,shaunalynnwood@gmail.com,,S,S,S,S,yes
+Sarah,Stevens,1620 Mystic St,,Knoxville,TN,37922,smorga13@gmail.com,,S,S,S,S,yes
+Kazmira,Eldaly,1703 Evelyn Ave,,Nashville,TN,37216,kazmiraeldaly@yahoo.com,,S,S,S,S,yes
+Kristina  ,Martin  ,11740 Wilshire Blvd  ,#1301A,Los Angeles   ,CA,90025,mariemkristina@gmail.com,,S,S,S,S,yes
+Amelia,Wright,51 Ball Hill Road,,Greenbrier,AR,72058,wrightamelia16@gmail.com,,M,L,L,L,yes
+Jaime,Morton,1023 Chanticleer Drive,,Crescent,PA,15046,mortonjame@gmail.com,,S,S,S,S,yes
+Ashley ,Stacy ,28060 red leaf lane ,,Southfield,MI,48076,a.stacy20@hotmail.com,,L,M,M,M,yes
+Dominique,Shim,27805 sw 163rd ave,,Homestead,FL,33031,DMShim14@gmail.com,,S,S,M,M,yes
+Gabby,Goodner,806 Wycliffe Way,,Irvine,CA,92602,gabby@thegoodnerremedy.com,,S,S,S,S,no
+Mary,Salon,1069 Camino La Medera ,Unit D,Camarillo ,CA,93010,msmarystyle@gmail.com,,L,L,L,L,yes
+Kiera,Connors,1032 Muscovy Lane,,Bensalem,PA,19020,kieraconnors@gmail.com,,XS,XS,XS,XS,yes
+Kendall,Malm,25252 Atwood Blvd,,Newhall,CA,91321,kendall.malm@yahoo.com,,S,XS,XS,XS,yes
+Claudia,Hannon,15295 West 72nd place,,Arvada,CO,80007,EmptyNestStyle@gmail.com,,M,M,M,M,yes
+Leigh,Coates,75-6138 Alii Dr.,#2,Kailua Kona,HI,96740,leigh@vshelicopters.com,,M,S,M,S,yes
+Nupur ,Singh ,555 Mission Rock st unit 429,,San Francisco ,CA,94158,thecrispycorner@gmail.com,,S,S,S,S,yes
+Krissy,Scott,2103 South Brentwood,,West Covina,CA,91792,krissypscott@gmail.com,,XL,XL,XL,XL,yes
+Rochelle,Banner-Cummings,1330 Cobb Parkway N. ,,Marietta,GA,30062,hello@rochelledenise.com,,XL,XL,XL,XL,yes
+Mariah ,Gondeiro,3281 South Sepulveda #309,,Los Angeles ,CA,90034,mariah.gondeiro@gmail.com,,S,S,S,M,yes
+Nikki,Kirk,20158 5th Street,,St Paul ,OR,97137,nikkirk_7@yahoo.com,,M,M,M,M,yes
+Lauren,Hendrix ,"19020 N 37th st Phoenix, AZ 85050",,Phoenix ,AZ,85050,lauren.hendrix@eagles.cui.edu,,S,S,S,S,yes
+Mae,Badiyan,525 N Sycamore Ave,# 204,Los Angeles,CA,90036,mae.badiyan@gmail.com,,L,L,L,L,yes
+Sujin Anna,Lee,160 Spring Street,,Lexington,MA,02421,gladyssujinlee12@gmaill.com,,XS,XS,XS,XS,yes
+PEGAH,OLFAT,361 SOUTH EL MONTE AVENUE,,LOS ALTOS,CA,94022,pegactive@gmail.com,,S,XS,S,XS,yes
+Sara,Waldman,8516 53rd Place East,,Bradenton,FL,34211,sneakers_sara@yahoo.com,,S,S,S,S,yes
+Beatrice,Caballero,1109 Bahia Ct ,B,Ontario ,CA,91762,Ishapemybikinibody@gmail.com,,M,M,M,M,yes
+Brittany,Colasuonno,8108B Point Sherman Drive ,,Kodiak,AK,99615,anchoredmommy@gmail.com,,S,S,S,S,yes
+Amy,Koroy,7210 NE 125 AVE,,Vancouver,WA,98683,silverrdreams@gmail.com,,L,S,M,M,yes
+Karee,Russell,5258 Bighorn Lane ,Apt. B ,Fort Irwin ,CA,92310,karee_russell24@aol.com,,S,M,M,M,yes
+Mirella,Welsh,512 Elizabeth Avenue ,Kansas ,City,KS,66101,carysswelsh@yahoo.com,,S,XS,XS,XS,yes
+Meghan ,Westbrook,469 Corinth Cr,,Dundee ,MI,48131,megleewest@gmail.com,,M,S,S,S,yes
+Jenniffer,Shaffer,3521 Cheshire Sq. Apt B,,Sarasota,FL,34237,jennifferquiros@gmail.com,,M,XS,S,S,yes
+Tammy,Wong,2821 La Salle Ave,,Costa Mesa,CA,92626,misstvmmy@gmail.com,,S,S,S,S,yes
+Lauren,Kirchmaier,42087 Shadows Pride Terrace,,Aldie,VA,20105,floraandvino@gmail.com,,S,S,S,S,yes
+Jacklyn,Hefter,180 Westcott Way ,,Sacramento,CA,95864,Jacklyn@socialmovementlj.com,,XS,XS,XS,XS,yes
+Chloe,Luk,30 Douglas Court ,,Staten Island ,NY,10304,Chloworewhat@gmail.com,,XS,XS,XS,XS,yes
+Nadia,Torres,"2220 Meridian Blvd Suite #VF758 Minden, NV 89423 USA",,Minden,NV,89423,loving.rhythmic@gmail.com,,XS,XS,XS,XS,yes
+Lindsay,Benster,2209 Grand Ave,,San Diego,CA,92109,lindsaybenster@gmail.com,,XS,XS,XS,XS,yes
+Jessica,Enslow,172 W Parkside Dr,,Saratoga Springs ,UT,84045,jessica@jessicaenslow.com,,M,S,S,S,yes
+Tanya,Moskalenko,19406 E. 4th AVE,,Spokane Valley,WA,99016,fashnfitlife@gmail.com,509-218-3889,M,S,S,S,yes
+Olivia,Daylor,701 college road,McKendree West 1207 02,Lebanon,IL,62254,o.daylor@gmail.com,,S,XS,S,S,yes
+Melissa,Thurnhofer,2341 N. Ventura Ave.,,Ventura,CA,93001,melissathurnhofer@gmail.com,,M,S,M,S,yes
+Amber,Rayer,17440 N Tatum Blvd #337,,Phoenix,AZ,85032,roger.rabbit.sws@gmail.com,,S,S,S,S,yes
+Nicole,Clooney,7205 e superstition sprigs blvd,2103,Mesa,AZ,85209,clooney.nicole@yahoo.com,,S,S,S,S,yes
+Jaymie Jennings ,C/O D. Teano,9188 Briarthorne Street,,Las Vegas ,NV,89123,jjlifenstyle@gmail.com,,L,M,M,M,yes
+Jessica,Frias,870 columbus ave apt 17c ,,Manhattan,NY,10025,jessi_mariel@hotmail.com,,S,S,S,S,yes
+Mishell,Marquez JP- 027893,8374 NW 64ST,,Miami,FL,33195,mishimarquez29@gmail.com,,S,S,S,S,yes
+Brittany,Jackson,7777 W McDowell Rd,Unit 2065,Phoenix,AZ,85035,brittgotfit@yahoo.com,,S,S,M,S,yes
+Alyssa,Chlebek,6 Concord Court,,South Barrington,IL,60010,welcominghealth11@gmail.com,,M,M,M,M,yes
+Alex,Bewley,2449 Cardinal Ave,"Sourin Residence Center, Unit #1360",Philadelphia ,PA,08057,alexcellenthealth@gmail.com,,M,L,M,XL,yes
+Lista,Duwyenie-Hodges ,6824 NW Crestwood Dr ,,Lawton,OK,73505,spookilicious15@yahoo.com,,M,S,M,S,yes
+Sarah,Bryant,1253 Scarlet Oak Cir,,Vero Beach,FL,32966,contact@sarahlouwho.com,,M,M,M,S,yes
+Donna,XIE,25 Pacifica Unit#5137,,Irvine,CA,92618,donnabyday@gmail.com,,M,S,S,S,yes
+Jamie,Hess,788 Columbus Avenue,11A,New York,NY,10025,jamie@nycfitfam.com,,S,S,S,S,yes
+Brenda,Quach,257 Grand St,#40,Brooklyn,NY,11211,brendaalexanderquach@gmail.com,,XS,XS,XS,XS,yes
+Bianka,Walker,92 SW 3rd ST,Unit 1602,Miami,FL,33130,thebiankastyle@gmail.com,,S,S,M,S,yes
+Mimi,Chicas-Perez,2655 Bishop Pine Court ,,San Bernardino ,CA,92407,ermie114@verizon.net,,XL,XL,XL,XL,yes
+Vanessa,Zambito,1008 NW 99th ave,,Doral,FL,33172,info@vanessazambito.com,,M,S,M,S,yes
+Carlee,Benear,1703 Mercoal drive,,Spring,TX,77386,carleeandmilam@gmail.com,,XS,XS,XS,XS,yes
+Kari,Duwe,4237 327th Pl Se,,Fall City,WA,98024,beautifulyoubykari@gmail.com,,M,M,S,M,yes
+Aurelia,Michael,2910 La Jolla Village Drive,,La Jolla,CA,92037,aureliamichael@gmail.com,,S,XS,S,XS,yes
+Jasmine,Krause,907 Ridgewood Ln,,Pensacola,FL,32506,infinitelymakeup@gmail.com,,S,S,S,S,yes
+Sarah,Sdringola,5330 Imogene st ,,Houston,TX,77096,italiaroxx123@ymail.com,,S,XS,S,S,yes
+Pragati,Shrivastava,7501 E McDowell Rd,Apt 3202,Scottsdale ,AZ,85257,misschicinfo@gmail.com,,S,XS,S,S,yes
+LIsa,Marlier,49 Prince St. #10,,New York,NY,10012,marlierlisa@yahoo.com,,S,S,XS,S,yes
+Dominique ,Pratt ,1710 township line road ,,Poplar bluff ,MO,63901,classymamadesigns@gmail.com,,S,S,XS,S,yes
+Shawn,Feinstein,4222 S. Ocean Blvd #3,,Highland Beach,FL,33487,info@thereallygoodstuff.com,,S,M,S,M,yes
+Dzevida,Lidan,8200 W Amarillo Blvd Apt 516,,Amarillo ,TX,79124,dlidan@hotmail.com,,XS,XS,XS,XS,yes
+Laramie,Otto,13024 Cordelia Lane ,Apt #307,Orlando,FL,32824,lifestylewithlaramie@gmail.com,,L,L,L,L,yes
+sharon ,stevens ,4836 penrose ave,,moorpark ,CA,93021,sharonstevensdance@gmail.com,,S,XS,S,XS,yes
+Namrata,Sehgal,"4344, Countrydale road, Riverside, California 92505 Contact number: 9517563966",,Riverside,CA,92505,namrata@yournextpick.com,,S,S,S,S,yes
+Carla,Nunez,6380 NW 114th Ave,Apt 31,Miami,FL,33178,info@carlapnunez.com,,S,S,S,S,yes
+Carly,Hartman,804 Stone Park Lane,Apt. 202,Woodland Park,CO,80863,hello@carlyhartman.com,,M,M,M,L,yes
+Tiffany,Tea,1260 devon lane,Apt f ,Harrisonburg ,VA,22312,tiffanyntea@gmail.com,,S,S,S,S,yes
+Angelica,Luczak,1956 old topanga Canyon road ,,Topanga,CA,90290,photo@angelicanatalie.com,,M,S,S,S,yes
+Bre,Sanders,10268 W. Sands Dr,#486,Peoria,AZ,85383,thecurioushippy@gmail.com,,S,M,S,M,yes
+Vanessa ,Barrios ,10250 prospect avenue #36,,Santee,CA,92071,vnsabris@gmail.com,,S,S,S,S,yes
+Channing,Hanneman,10272 Belleau Drive,,Twinsburg,OH,44087,channingcouture@gmail.com,,S,S,M,S,yes
+Deborah,Andrade,710 s park rd,Apt 1431,Hollywood,FL,33021,abdeborah@gmail.com,,M,L,L,L,yes
+Ashley,Moore,13240 Claremont ave,,Victorville,CA,92392,ashleysummer97@icloud.com,,S,M,M,M,yes
+Aimee,Rauseo,3118 Pennywell Lane ,,Katy,TX,77494,info@peachyqueen.com,,L,M,XL,XL,yes
+Laura,Portera,709 Burroughs Rd,,Fairfield ,CT,06825,laura_portera@yahoo.com,,S,S,S,S,yes
+Jessica,Moreno,245 NE 14 TH ST APT 805,,Miami,FL,33132,info@jessimorenon.com,,S,S,S,S,yes
+Lanae ,Mendez,300 Ashley park blvd  Apt 508,,Newnan,GA,30263,lanaemendez@gmail.com,,S,S,S,S,yes
+Ciara,Austin,8334 Lincoln Blvd,#140,Los Angeles,CA,90045,ciara@ciaratoga.com,,S,S,S,S,Yes 
+Rebecca,Lee,1252 23 St.  ,#3,Santa Monica,CA,90404,Onemorereb@gmail.com,,S,XS,XS,XS,Yes 
+Angel,Pelaez,95-1270 Wikao Street,,Mililani,HI,96789,gypsea.angel@gmail.com,,S,M,S,M,Yes 
+Caroline,Zalog,917 Santa Fe Ave.,,Albany,CA,94706,info.carolinezalog@gmail.com,,S,S,S,S,Yes 
+Jamie,Friedlander,5541 Wellesley Drive,,Calabasas,CA,91302,jamiefriedlander14@gmail.com,818-264-8152,S,S,S,S,Yes 
+Danielle,Vetter,531 Virginia Ave,Apt 218,Indianapolis,IN,46203,danielledoesyoga@gmail.com,,M,M,M,M,Yes 
+Elisha,Barry,12 W Lancaster Ave.  ,Apartment 2  ,Ardmore ,PA,19003,lishinquiries@gmail.com,,M,S,S,S,Yes 
+Jenna,Cardone,207 Carroll Court,,Newark  ,DE,19711,jennancardone@gmail.com,,S,S,M,S,Yes 
+Iesha,Thompson,2513 Allenbrook Dr,Apt 107,Allentown,PA,18103,Lesh@livinglesh.com ,,S,S,S,S,Yes 
+Lauryn,Hock,279 E 2nd Ave,#4,Salt Lake City,UT,84103,hello@lauryncakes.com,,L,M,M,M,Yes 
+JElissa,Marshall,170 Prospect Pl  Apt 1B,,Brooklyn   ,NY,11238,j.elissa.marshall@gmail.com,703-609-0739,S,XS,XS,XS,Yes 
+Samara,vanderLinden,PO Box 239,,Weimar,CA,95736,samaravdlinden@hotmail.com,530-637-7003,M,M,M,M,Yes 
+Kam,Searles,1335 Summit Ave,Unit 219,Oshkosh,WI,54901,kam.searles@gmail.com,312-504-2573,XS,XS,XS,XS,Yes 
+Mariam,Chubinidzhe,45 Fairview Ave  ,APT 8A,New York ,NY,10040,mariamchubinidzhe@gmail.com,,M,M,M,M,Yes 
+Sophia,Clauss,3830 San Antonio Rd,,Yorba linda,CA,92886,suitablysophie@outlook.com,714-470-6714,M,M,M,M,Yes 
+Danielle,Saffold,113 Liberty Parkway  ,b2 ,Saint Robert ,MO,65584,FitnessDani30@gmail.com,,M,M,L,M,Yes 
+Megan,Grabau,10901 whipple street,,North Hollywood,CA,91602,Megangrabau98@gmail.com,,M,S,M,S,Yes 
+Angelica,Hernandez,16867 Sausalito Dr., ,Whittier,CA,90603,angelicalorraine-22@yahoo.com,,S,XS,S,XS,Yes 
+Christen ,Lockett ,4013 glenhurst lane,,Frisco ,TX,75033,Lockettup95@gmail.com,,S,S,S,S,Yes 
+Mary ,Mccrory,31 Wilmington rd ,,Asheville,NC,28803,Mmccrory@unca.edu,,L,L,L,L,Yes 
+Mirieys,Perez,2827 SW 37th CT,,Miami,FL,33134,miry@fitcrazy.tv,,S,M,S,M,Yes 
+Alyssa,Puglia,91 Ruggles st,,Quincy,MA,02169,Alyssa@thenotoriouspug.co,,S,S,S,S,Yes 
+Samantha,Robinson,25206 Briargate Terrace,,Chantilly,VA,20152,management.saaammage@gmail.com,,S,S,S,S,Yes 
+Eliana,Sandoval,8832 Shirley Ave  ,unit #1,Northridge,CA,91324,Coffeeandlunges@yahoo.com,,XL,XL,XL,XL,Yes 
+Nicole,Settecasi,220 Bogert Place,,Paramus,NJ,07652,niicolemariiefiit@gmail.com,,S,S,S,S,Yes 
+Preeti,Srinivasan,101 West 70th Street ,Apt 3N,New York ,NY,10023,preeti.vani.94@gmail.com,,M,M,M,M,Yes 
+Whitney,Wheat,111 E. Dewey Ave.  ,Apt. 426,Wharton,NJ,07885,whitney.d.wheat@gmail.com,,S,S,S,S,Yes 
+Michaela,Bogert,24 shetland lane  ,,Pleasant Hill   ,CA,94523,michaelabog@gmail.com,,XS,XS,XS,XS,Yes 
+Sydney,Zmrzel,200 East Broadway,Apt 522,Glendale,CA,91205,sydneyzmrzel@gmail.com,,S,S,S,S,Yes 
+Katerina,Seigel,24 North Childs Street,,Woodbury,NJ,08096,kseigel1@gmail.com,,M,M,M,M,no
+Blair,VanSchuyver,5206 Norwich Ave apt 106,,Sherman Oaks ,CA,91411,justbeingblair@gmail.com,,M,M,M,M,no
+Britney,Stone,575 Sierra Meadow Drive ,,Sierra Madre,CA,91024,britneykstone@gmail.com,,L,L,M,L,yes
+Nhabyla,Greige,1871 nw south river dr Apt 907  Terrace river park,,Miami,FL,33125,nhabyla@gmail.com,,S,S,S,S,no
+martha,noguera,8000 NW 29TH ST,,miami,FL,33122,dreamypassport@gmail.com,,M,S,M,S,yes
+Charity,LeBlanc,915 Mark Dr.,,Clearwater ,FL,33756,charity@charityleblanc.com,,XS,XS,XS,XS,no
+Kim,Mykitta,19311 Sunray Ln,Unit 203,Huntington Beach,CA,92648,sartoriallyoc@gmail.com,,XS,XS,XS,XS,yes
+Jessica,Castaneda,7502 W Diversey Ave,,Elmwood Park,IL,60707,jessica@easylivingtoday.com,,M,M,M,M,no
+Sona,N.,918 East Magnolia Blvd.,,Burbank ,CA,91501,sonauniverse@gmail.com,,XS,XS,XS,XS,yes
+Alexid,Amato,21071 Lochlea Ln apt. D,,Huntington Beach,CA,92646,fullofsips@gmail.com,,L,M,M,M,yes
+Emily,Baranski,2601 S el Camino Real ,Apt #1,San clemente,CA,92672,emilybaranski3@gmail.com,,S,XS,XS,XS,no
+Marshel,Ng,17304 Mirasol,,Irvine,CA,92620,betweenyounmeblog@gmail.com,,L,L,L,L,yes
+Erica,Canady,205 S Kings Dr,210,Charlotte,NC,28204,ericacanady1991@gmail.com,,S,S,S,S,yes
+Kennedy,Taylor,801 Olive Dr,,Silver Spring,MD,20905,kennedy.marie@icloud.com,,S,XS,XS,S,no
+Brianna,Engelkes,3 Boxelder Court,,Bolingbrook,IL,60490,briannamae90@gmail.com,,S,S,S,S,yes
+Britney,Stone,575 Sierra Meadow Drive,,Sierra Madre,CA,91024,britneykstone@gmail.com,,L,L,M,L,no
+Julia,Davidson,952 Canton Street,,Iowa City,IA,52245,juliarosedavidson528@gmail.com,,M,M,M,M,no
+Piper,Jackson,19475 N Grayhawk Dr Unit # 1098 ,,Scottsdale ,AZ,85255,leslieclairejackson@gmail.com,,XS,S,XS,S,no
+Zingha ,Clay,4701 Chester Ave apt 2B,,Philadelphia ,PA,19143,billipromotions@gmail.com,,M,M,M,M,yes
+FATOUMATTA,DARBOE,502 W 37TH ST,,HAYS,KS,67601,fdarbz10@gmail.com,,S,S,S,S,yes
+Daniela,Castrillon,8800 NW 36 Street Apt 4558    ,,Miami,FL,33178,danny-cas@hotmail.com,,M,M,M,M,no
+Caroline,Alvarado,833 Oakdale Ave ,,Monrovia,CA,91016,caro.alvarado1309@gmail.com,,L,S,S,M,yes
+Jasmine,Ryakhovskaya ,14657 Blythe St ,,Panorama City,CA,91402,jasmineryakhovskaya@gmail.com,,M,M,M,M,no
+Jennica,Keyser,4999 W. 7770 S.,,West Jordan,UT,84081,jennica.keyser1@gmail.com,,S,S,S,S,yes
+Jordan,Briseno,12 Old Stable Drive,,Mansfield,MA,02048,jordanbriseno18@gmail.com,,XS,XS,XS,XS,no
+Leticia,Rojas,519 N Lazard St,,San Fernando,CA,91340,christinerojas17@yahoo.com,,S,S,S,M,yes
+Rose,DiNuccio,41 Milton St.,,North Andover,MA,01845,Rose.dinuccio@gmail.com,,S,XS,S,S,no
+Jewlz,White,1506 Pickett rd,,Timonium,MD,21093,juicyjuiceyoga@gmail.com,,M,L,L,L,yes
+Michelle,Waterson,12001 eagle rock ave ne,,Albuquerque,NM,87111,karatehottiecontact@gmail.com,,S,S,S,S,no
+Giana,Bianchi,23 Berkshire Drive,,Ballston Spa,NY,12020,gianajade@gmail.com,,S,S,S,S,yes
+Sofia ,Venanzetti,1331 Lincoln Rd apt 1205,,Miami Beach,FL,33139,venanzettisvegas@gmail.com,,M,M,L,M,no
+Alyssa,Pietrosanto,4074 Utah Street #7,,San Diego ,CA,92104,alyssa@lifeandstylebyap.com,,L,M,L,M,yes
+Amy,Linnen,1661 Old Country Rd,#542,Riverhead ,NY,11901,amylinnen@mac.com,,L,L,M,L,no
+Juliet ,casso,435 emery street,,Longmont,CO,80501,jemyoga101@gmail.com,,M,S,XS,S,yes
+Maggie,Niemiec,8709 Glencrest Ln,,Dallas,TX,75209,maggie8479@yahoo.com,,M,S,S,S,no
+Carly,Wendt,625 Concord ln NW,,Cedar Rapids,IA,52405,carly.wendt@yahoo.com,,M,S,M,M,yes
+Phyllicia,Bonanno,50 Raymond Avenue,,Plainfield,NJ,07062,phyllicia.yoga@gmail.com,,XS,XS,XS,XS,no
+Heather ,Barb,2901 N Davidson St.  Apt. 231,,Charlotte,NC,28205,heatherlynn.fit@gmail.com,,S,S,S,S,yes
+Stephanie,Esparza,3639 riverview dr ,,riverside ,CA,92509,perrla26@gmail.com,,S,S,M,M,no
+Taylor,Ferris,8043 Old Town Dr. ,,Orlando,FL,32819,taylorrochellef@gmail.com,,M,S,S,S,yes
+Devorah,Kosman,1310 Ozone Ave ,,Santa Monica ,CA,90405,dkosman1@gmail.com,,L,S,S,S,no
+Grace,Rockwell,960 Grant St,#721,Denver,CO,80203,zaonutrition@gmail.com,,S,S,M,M,yes
+Rosie,Christian,1107 Saint Paul Street,,Denver,CO,80206,rootwithrosie@gmail.com,,S,XS,S,S,yes
+Elise,Ingenito,3 Candlewood Path North,,Dix Hills,NY,11746,elise@balancefitflex.com,,M,S,S,S,yes
+Angela ,Bekkala,54 Rutland St.,,Dover,NH,03820,happyfitmama@gmail.com,,S,S,S,M,yes
+Taylor,Monahan,311 Avant St,,Sarasota,FL,34232,taylor.monahan2@gmail.com,,S,S,S,S,yes
+Kaitlyn,Reichert,11534 Clayton Rd,,St. Louis,MO,63131,kaitlyn@lovealloccasions.com,,S,S,S,S,no
+Destiny,Meadows,762 East Drive,,Princeton,WV,24740,dfm0001@mix.wvu.edu,,M,M,M,M,no
+Taylor,Ferraro,212 Avenue b,,Redondo Beach ,CA,90277,taylormferraro@gmail.com,,M,M,M,L,yes
+Anastasia,Yudin,631 w bakerview rd,Apt 208,Bellingham,WA,98226,anastasiayudin300@gmail.com,,XS,XS,XS,XS,no
+Stephanie,Meyers,9796 S Goldroad Place,,Mohave Valley ,AZ,86440,Stephiihaven@gmail.com,,S,XS,S,S,no
+Heather,Austrie,442 Reid St,,Fairfield,CT,06824,coombsh1@gmail.com,,M,M,S,M,no
+Morgan,Yost ,1856 W Kentucky Ave,,Denver,CO,80223,morgan.yost125@gmail.com,,S,S,S,M,no
+Sarah,Hackshaw,13120 Garfield Dr.,,Thornton,CO,80241,sarahrosehackshaw@gmail.com,,XL,M,M,M,no
+Kate,Van Horn,29 Haddon Ave,,Haddon Township,NJ,08108,katebekaleinit@gmail.com,,S,S,S,S,no
